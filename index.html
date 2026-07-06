@@ -42,10 +42,11 @@
     width:100%;
     background:#081C2E;
     border-bottom:2px solid var(--orange);
-    padding:40px 0 20px 0;
+    padding:22px 0 18px 0;
     margin-bottom:50px;
-    position:relative;
-    z-index:5;
+    position:sticky;
+    top:0;
+    z-index:100;
   }
   .section-header-band .wrap{
     padding:0 48px;
@@ -70,6 +71,12 @@
     width:28px;height:2px;
     background:var(--orange-light);
     display:inline-block;
+  }
+  /* ===== ENLARGED SECTION TITLES ===== */
+  #stats h2, #sobre h2, #ciclo h2, #estrutura h2, #equipes h2,
+  #plataforma h2, #seguranca h2, #cases h2, #clientes h2{
+    font-size:clamp(40px,4.5vw,60px) !important;
+    line-height:1.08 !important;
   }
   .eyebrow-sub{
     font-family:var(--mono);
@@ -704,7 +711,7 @@
 <section id="stats" data-theme="dark">
   <div class="section-header-band"><div class="wrap"><div class="eyebrow-text">Nossos números</div></div></div>
   <div class="wrap">
-    <h2 style="color:#fff;font-size:clamp(26px,3vw,36px);max-width:620px;margin-bottom:50px;">Escala nacional, execução de ponta a ponta.</h2>
+    <h2 style="color:#fff;max-width:700px;margin-bottom:50px;">Escala nacional, execução de ponta a ponta.</h2>
     <div class="grid">
       <div class="cell"><div class="num" data-count="14000"><span class="plus">+</span>0</div><div class="lbl">Km de rede operada em todo o Brasil</div></div>
       <div class="cell"><div class="num" data-count="96"><span class="plus">+</span>0</div><div class="lbl">Equipes de campo especializadas</div></div>
@@ -719,7 +726,7 @@
   <div class="wrap">
     <div class="layout">
       <div class="copy rv">
-        <h2 style="font-size:clamp(32px,3.8vw,46px);color:var(--navy-deep);margin-bottom:22px;line-height:1.15;">Do projeto à operação, sem terceirizar o essencial.</h2>
+        <h2 style="color:var(--navy-deep);margin-bottom:22px;">Do projeto à operação, sem terceirizar o essencial.</h2>
         <p>Especialistas em construção, implantação e operação de redes ópticas — com equipes próprias em todo o ciclo de telecom.</p>
         <div class="checks">
           <div class="ck"><span class="ic"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4" stroke="#F2994A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Base fixa em RS, SC e PR</div>
@@ -766,7 +773,7 @@
   <div class="section-header-band"><div class="wrap"><div class="eyebrow-text">Estrutura operacional</div></div></div>
   <div class="wrap">
     <div class="sec-head on-dark rv">
-      <h2 style="color:#fff;">Presença própria no Sul do Brasil.</h2>
+      <h2 style="color:#fff;margin-bottom:22px;">Presença própria no Sul do Brasil.</h2>
       <p style="color:rgba(255,255,255,0.62);">3 bases fixas com escritório, estoque e sala de reunião — estrutura pronta para atender com agilidade em qualquer estado.</p>
     </div>
 
@@ -879,7 +886,7 @@
   <div class="wrap">
     <div class="layout">
       <div class="rv">
-        <h2 style="color:#fff;font-size:clamp(26px,3vw,36px);line-height:1.15;margin-bottom:16px;">Monitoramento completo, do técnico em campo ao relatório final.</h2>
+        <h2 style="color:#fff;margin-bottom:16px;">Monitoramento completo, do técnico em campo ao relatório final.</h2>
         <p style="color:rgba(255,255,255,0.6);font-size:15px;line-height:1.7;">A plataforma <b style="color:#fff;">Serviços JLE</b> acompanha cada etapa da execução em tempo real — do lançamento em campo até a entrega documentada ao cliente.</p>
         <div class="feat-list">
           <div class="feat"><div class="f-ic">%</div><div class="f-txt"><b>Progresso em tempo real</b><span>Acompanhamento do avanço de cada serviço, trecho a trecho.</span></div></div>
@@ -915,7 +922,7 @@
   <div class="wrap">
     <div class="layout">
       <div class="rv">
-        <h2 style="color:#fff;font-size:clamp(28px,3.2vw,38px);line-height:1.12;margin-bottom:18px;">A vida em primeiro lugar. Sempre.</h2>
+        <h2 style="color:#fff;margin-bottom:18px;">A vida em primeiro lugar. Sempre.</h2>
         <p style="color:rgba(255,255,255,0.65);font-size:15.5px;line-height:1.7;">A empresa possui área responsável que elabora e revisa constantemente todos os procedimentos de Segurança e Saúde do Trabalho, garantindo o cumprimento de todas as obrigações — com EPIs, EPCs e rotina de exames e treinamentos contínuos.</p>
         <div class="proc-list">
           <div class="p-item"><div class="p-code">INS1.003</div><div class="p-txt">Procedimento de Emergência</div></div>
