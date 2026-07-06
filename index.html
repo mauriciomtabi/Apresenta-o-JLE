@@ -1000,6 +1000,94 @@
     transform: translateX(-50%) translateY(0);
   }
 
+
+  /* ===== ESTRUTURA LIST ===== */
+  #estrutura .estrutura-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #estrutura .estrutura-list li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+    position: relative;
+    padding-left: 28px;
+  }
+  #estrutura .estrutura-list li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 16px;
+    font-family: var(--mono);
+  }
+  #estrutura .estrutura-list li strong {
+    color: #fff;
+    display: block;
+    font-size: 14.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+    font-family: var(--mono);
+  }
+
+  /* ===== DIFERENCIAIS GRID ===== */
+  .diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .dif-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 32px 24px;
+    box-shadow: 0 10px 25px -10px rgba(8, 28, 46, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .dif-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 35px -12px rgba(8, 28, 46, 0.12);
+    border-color: rgba(242, 153, 74, 0.4);
+  }
+  .dif-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(242, 153, 74, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .dif-card h4 {
+    font-size: 16px;
+    color: var(--navy-deep);
+    line-height: 1.45;
+    font-weight: 600;
+    margin: 0;
+  }
+  @media(max-width: 860px) {
+    .diferenciais-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .dif-card {
+      grid-column: span 1 !important;
+      text-align: left;
+    }
+    .dif-icon {
+      margin: 0 0 16px 0 !important;
+    }
+  }
+
   </style>
 </head>
 <body>
@@ -1022,6 +1110,99 @@
   <div class="scrolldown"><span>role</span><div class="ln"></div></div>
 </section>
 
+<section id="sobre" data-theme="light" style="padding: 110px 0 100px; background: var(--paper);">
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Quem somos</div></div></div>
+  <div class="wrap">
+    <div class="sobre-intro rv" style="max-width: 960px; margin: 40px auto; text-align: center;">
+      <h2 style="font-size: clamp(32px, 4.5vw, 54px); color: var(--navy-deep); line-height: 1.15; margin-bottom: 28px; font-weight: 700;">Conectando o Brasil com qualidade, agilidade e confiança</h2>
+      <p style="font-size: clamp(16px, 1.8vw, 22px); color: var(--slate); line-height: 1.65; font-weight: 400; max-width: 820px; margin: 0 auto;">Somos especialistas em telecomunicações, com atuação nacional e foco em entregar soluções completas e inovadoras para nossos clientes.</p>
+    </div>
+  </div>
+</section>
+<section id="diferenciais" data-theme="light" style="padding: 110px 0 120px; background: var(--paper);">
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Diferenciais</div></div></div>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow-sub">Por que a JLE?</div>
+      <h2>Diferenciais JLE Telecom</h2>
+    </div>
+    <div class="diferenciais-grid">
+      <div class="dif-card rv">
+        <div class="dif-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h4>Equipes altamente capacitadas</h4>
+      </div>
+      <div class="dif-card rv rv2">
+        <div class="dif-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h4>Atuação em todo o território nacional</h4>
+      </div>
+      <div class="dif-card rv rv3">
+        <div class="dif-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h4>Alta capacidade produtiva e escala operacional</h4>
+      </div>
+      <div class="dif-card rv">
+        <div class="dif-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h4>Capacidade de Investimento</h4>
+      </div>
+      <div class="dif-card rv rv2">
+        <div class="dif-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h4>Estrutura completa de engenharia e execução</h4>
+      </div>
+      <div class="dif-card rv rv3">
+        <div class="dif-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h4>Rigor em segurança do trabalho</h4>
+      </div>
+      <div class="dif-card rv" style="grid-column: span 3; justify-content: center; text-align: center; max-width: 100%;">
+        <div class="dif-icon" style="margin: 0 auto 16px auto;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h4 style="font-size: 18px; max-width: 600px; margin: 0 auto;">Experiência com grandes operadoras (Claro, Vivo, Huawei, Algar)</h4>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="estrutura" data-theme="dark">
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Nossa estrutura</div></div></div>
+  <div class="wrap">
+    <div class="map-block rv">
+      <div class="map-copy">
+        <div class="eyebrow-sub on-dark">Onde atuamos</div>
+        <h3 style="font-size: 32px; color: #fff; margin-bottom: 24px;">Nossa estrutura</h3>
+        <ul class="estrutura-list">
+          <li><strong>Bases fixas:</strong> São Leopoldo (RS – Matriz), São José (SC) e Curitiba (PR).</li>
+          <li><strong>Equipes:</strong> Equipes de fibra óptica, canalização, lançamento de rede, ativação de serviços e operações.</li>
+          <li><strong>Frota e maquinário:</strong> Frota e maquinário especializado (MND, valetadeiras, retroescavadeiras etc.).</li>
+          <li><strong>Segurança:</strong> Área dedicada à segurança e treinamentos contínuos.</li>
+        </ul>
+      </div>
+      <div class="map-visual">
+        <div id="realMap"></div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div class="photo-card tilt-card rv"><img src="IMAGENS_OTIMIZADAS/FROTA/1711560916543.jpg" alt="Frota JLE Telecom"><div class="cap"><div class="tag">Frota</div><h4>Veículos operacionais</h4></div></div>
+      <div class="photo-card tilt-card rv rv2"><img src="IMAGENS_OTIMIZADAS/EQUIPAMENTOS/1760400196438.jpg" alt="Armazenamento de equipamentos"><div class="cap"><div class="tag">Logística</div><h4>Estoque &amp; equipamentos</h4></div></div>
+      <div class="photo-card tilt-card rv rv3"><img src="IMAGENS_OTIMIZADAS/FROTA/1711561776074.jpg" alt="Veículo de manutenção"><div class="cap"><div class="tag">Manutenção</div><h4>Atendimento ágil</h4></div></div>
+    </div>
+    <div class="row-3">
+      <div class="photo-card tilt-card rv"><img src="IMAGENS_OTIMIZADAS/EQUIPAMENTOS/IMG_20251125_152033754_PORTRAIT.jpg" alt="Máquina de fusão e OTDR"><div class="cap"><div class="tag">Tecnologia</div><h4>Fusão, OTDR &amp; certificação</h4></div></div>
+      <div class="photo-card tilt-card rv rv2"><img src="IMAGENS_OTIMIZADAS/CANALIZACAO/daff2.JPG" alt="Equipamento de MND"><div class="cap"><div class="tag">Obras civis</div><h4>Equipamentos MND</h4></div></div>
+      <div class="photo-card tilt-card rv rv3"><img src="IMAGENS_OTIMIZADAS/BASE RS/WhatsApp Image 2025-08-27 at 13.51.15 (1).jpeg" alt="Sala técnica"><div class="cap"><div class="tag">Ativação</div><h4>Alta capacidade</h4></div></div>
+    </div>
+  </div>
+</section>
 <section id="stats" data-theme="dark">
   <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Nossos números</div></div></div>
   <div class="wrap">
@@ -1031,103 +1212,6 @@
       <div class="cell"><div class="num" data-count="96"><span class="plus">+</span>0</div><div class="lbl">Equipes de campo especializadas</div></div>
       <div class="cell"><div class="num" data-count="71"><span class="plus">+</span>0</div><div class="lbl">Equipes dedicadas de fibra óptica</div></div>
       <div class="cell"><div class="num" data-count="5000"><span class="plus">+</span>0</div><div class="lbl">Km de rede em operação e manutenção</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="sobre" data-theme="light">
-  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Quem somos</div></div></div>
-  <div class="wrap">
-    <div class="layout">
-      <div class="copy rv">
-        <h2 style="color:var(--navy-deep);margin-bottom:22px;">Do projeto à operação, sem terceirizar o essencial.</h2>
-        <p>Especialistas em construção, implantação e operação de redes ópticas — com equipes próprias em todo o ciclo de telecom.</p>
-        <div class="checks">
-          <div class="ck"><span class="ic"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4" stroke="#F2994A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Base fixa em RS, SC e PR</div>
-          <div class="ck"><span class="ic"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4" stroke="#F2994A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Atuação em todo o Brasil</div>
-          <div class="ck"><span class="ic"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4" stroke="#F2994A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Mobilização rápida para grandes demandas</div>
-        </div>
-        <div class="chips">
-          <div class="chip">FTTH & BACKBONE</div>
-          <div class="chip">GPON</div>
-          <div class="chip">MND / MD</div>
-          <div class="chip">CLASSE L</div>
-          <div class="chip">O&M DE REDE</div>
-        </div>
-      </div>
-      <div class="sobre-gallery rv rv2">
-        <div class="sg-row">
-          <img src="IMAGENS_OTIMIZADAS/BASE RS/WhatsApp Image 2025-08-27 at 13.51.15 (1).jpeg"
-               alt="Escritório JLE Telecom" class="sg-cell">
-          <img src="IMAGENS_OTIMIZADAS/SOBRE/frota_jle_operacao.jpg"
-               alt="Frota JLE em operação" class="sg-cell">
-        </div>
-        <div class="sg-row">
-          <img src="IMAGENS_OTIMIZADAS/SOBRE/projeto_mapa_rede.jpg"
-               alt="Projeto de rede óptica JLE" class="sg-cell">
-          <img src="IMAGENS_OTIMIZADAS/SOBRE/maquina_hdd_rodovia.jpg"
-               alt="Máquina HDD JLE em operação" class="sg-cell">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="ciclo" data-theme="light">
-  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Ciclo completo de telecom</div></div></div>
-  <div class="wrap">
-    <div class="sec-head rv">
-      <h2>Seis etapas. Uma única empresa.</h2>
-      <p>Projeto, máquinas e equipes próprias em cada fase da construção de rede — sem depender de terceiros.</p>
-    </div>
-    <div class="flow" id="flowWrap">
-      <svg class="flow-line-svg" id="flowLine" preserveAspectRatio="none" viewBox="0 0 1000 4">
-        <line x1="0" y1="2" x2="1000" y2="2"></line>
-      </svg>
-      <div class="node rv"><div class="n-badge">01</div><h4>Projeto mecânico &amp; construtivo</h4><p>Projetos executivos e apresentação às companhias de energia elétrica.</p></div>
-      <div class="node rv rv2"><div class="n-badge">02</div><h4>Construção de infraestrutura</h4><p>Quadros de energia, muretas, bases e racks para novos sites.</p></div>
-      <div class="node rv rv3"><div class="n-badge">03</div><h4>Canalização MND &amp; MD</h4><p>Construção de dutos em faixa de domínio de rodovias e travessias via MND (Furo Direcional).</p></div>
-      <div class="node rv rv4"><div class="n-badge">04</div><h4>Lançamento de rede</h4><p>Lançamento aéreo e subterrâneo (sopro) de backbones e redes secundárias para ITS.</p></div>
-      <div class="node rv"><div class="n-badge">05</div><h4>Emenda &amp; certificação</h4><p>Alta produtividade em fusão e certificação de redes.</p></div>
-      <div class="node rv rv2"><div class="n-badge">06</div><h4>Ativação &amp; O&amp;M</h4><p>Ativação de links e operação/manutenção contínua da rede.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="estrutura" data-theme="dark">
-  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Estrutura operacional</div></div></div>
-  <div class="wrap">
-    <div class="sec-head on-dark rv">
-      <h2 style="color:#fff;margin-bottom:22px;">Presença própria no Sul do Brasil.</h2>
-      <p style="color:rgba(255,255,255,0.62);">3 bases fixas com escritório, estoque e sala de reunião — estrutura pronta para atender com agilidade em qualquer estado.</p>
-    </div>
-
-    <div class="map-block rv">
-      <div class="map-copy">
-        <div class="eyebrow-sub on-dark">Onde estamos</div>
-        <h3>Matriz e filiais próprias, prontas para mobilização rápida.</h3>
-        <p>Três bases fixas cobrindo o Sul do Brasil, com armazenamento, escritório e equipes residentes — a estrutura necessária para atender grandes demandas com agilidade.</p>
-        <div class="base-list">
-          <div class="base-item"><span class="b-dot"></span><div class="b-txt"><b>São Leopoldo · RS</b><span>Matriz — Rua Imperatriz Leopoldina, 2244</span></div></div>
-          <div class="base-item"><span class="b-dot"></span><div class="b-txt"><b>São José · SC</b><span>Filial 01 — Bairro Serraria</span></div></div>
-          <div class="base-item"><span class="b-dot"></span><div class="b-txt"><b>Curitiba · PR</b><span>Filial 02 — Bairro Portão</span></div></div>
-        </div>
-
-      </div>
-      <div class="map-visual">
-        <div id="realMap"></div>
-      </div>
-    </div>
-
-    <div class="cols">
-      <div class="photo-card tilt-card rv"><img src="IMAGENS_OTIMIZADAS/FROTA/1711560916543.jpg" alt="Frota JLE Telecom"><div class="cap"><div class="tag">Frota</div><h4>Veículos operacionais</h4></div></div>
-      <div class="photo-card tilt-card rv rv2"><img src="IMAGENS_OTIMIZADAS/EQUIPAMENTOS/1760400196438.jpg" alt="Armazenamento de equipamentos"><div class="cap"><div class="tag">Logística</div><h4>Estoque &amp; equipamentos</h4></div></div>
-      <div class="photo-card tilt-card rv rv3"><img src="IMAGENS_OTIMIZADAS/FROTA/1711561776074.jpg" alt="Veículo de manutenção"><div class="cap"><div class="tag">Manutenção</div><h4>Atendimento ágil</h4></div></div>
-    </div>
-    <div class="row-3">
-      <div class="photo-card tilt-card rv"><img src="IMAGENS_OTIMIZADAS/EQUIPAMENTOS/IMG_20251125_152033754_PORTRAIT.jpg" alt="Máquina de fusão e OTDR"><div class="cap"><div class="tag">Tecnologia</div><h4>Fusão, OTDR &amp; certificação</h4></div></div>
-      <div class="photo-card tilt-card rv rv2"><img src="IMAGENS_OTIMIZADAS/CANALIZAÇÃO/daff2.JPG" alt="Equipamento de MND"><div class="cap"><div class="tag">Obras civis</div><h4>Equipamentos MND</h4></div></div>
-      <div class="photo-card tilt-card rv rv3"><img src="IMAGENS_OTIMIZADAS/BASE RS/WhatsApp Image 2025-08-27 at 13.51.15 (1).jpeg" alt="Sala técnica"><div class="cap"><div class="tag">Ativação</div><h4>Alta capacidade</h4></div></div>
     </div>
   </div>
 </section>
@@ -1809,8 +1893,10 @@
 
     // Query and make all text elements contenteditable
     const selectors = [
-      '#hero h1', '#hero p', '#sobre h2', '#sobre p', '#sobre .chip', '#sobre .ck',
-      '#stats h2', '#stats .num', '#stats .lbl', '#ciclo h2', '#ciclo p', '.flow-card p',
+      '#hero h1', '#hero p', '#sobre h2', '#sobre p',
+      '#diferenciais h2', '#diferenciais h4',
+      '#estrutura h3', '#estrutura .estrutura-list li',
+      '#stats h2', '#stats .num', '#stats .lbl',
       '.sec-head h2', '.sec-head p', '.panel-copy h3', '.panel-copy p', '.panel-copy .st b', '.panel-copy .st span',
       '.case-card h4', '.metrics .m b', '.metrics .m span', '#contato h2', '#contato h5', '#contato p', '#contato a',
       '.bottom-bar span'
