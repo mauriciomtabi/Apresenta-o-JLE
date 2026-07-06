@@ -42,7 +42,7 @@
     width:100%;
     background:#081C2E;
     border-bottom:2px solid var(--orange);
-    padding:22px 0 18px 0;
+    padding:14px 0;
     margin-bottom:50px;
     position:sticky;
     top:0;
@@ -54,6 +54,12 @@
     margin:0 auto;
     display:flex;
     align-items:center;
+    justify-content:space-between;
+  }
+  .section-header-band .band-logo{
+    height:36px;
+    width:auto;
+    flex-shrink:0;
   }
   .section-header-band .eyebrow-text{
     font-family:var(--mono);
@@ -111,13 +117,7 @@
   .rv4{transition-delay:.36s;}
 
   /* ===== NAV ===== */
-  #nav{
-    position:fixed;top:0;left:0;right:0;z-index:50;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:20px 56px;
-    background:linear-gradient(to bottom, rgba(8,28,46,0.85), transparent);
-    transition:background .4s ease, padding .4s ease, backdrop-filter .4s ease;
-  }
+  #nav{display:none;}
   #nav.scrolled{
     background:rgba(8,28,46,0.92);
     backdrop-filter:blur(10px);
@@ -156,7 +156,7 @@
     display:flex;align-items:flex-end;
     background:linear-gradient(180deg, rgba(6,16,27,0.72) 0%, rgba(6,16,27,0.66) 40%, rgba(4,12,20,0.97) 92%), url('IMAGENS_OTIMIZADAS/fused_hero.jpg');
     background-size:cover;background-position:center 38%;
-    padding:0 0 90px 0;
+    padding:0 0 90px 0;padding-top:0;
   }
   #hero .hero-inner{width:100%;padding-top:200px;}
   #hero .kicker{
@@ -693,12 +693,7 @@
 </head>
 <body>
 
-<nav id="nav">
-  <div class="logo-wrap">
-    <img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logo JLE.png" alt="JLE Telecom">
-  </div>
-  <a class="cta" href="#contato">Contato</a>
-</nav>
+
 
 <section id="hero" data-theme="dark">
   <div class="spotlight" id="heroSpot"></div>
@@ -709,7 +704,7 @@
 </section>
 
 <section id="stats" data-theme="dark">
-  <div class="section-header-band"><div class="wrap"><div class="eyebrow-text">Nossos números</div></div></div>
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Nossos números</div></div></div>
   <div class="wrap">
     <h2 style="color:#fff;max-width:700px;margin-bottom:50px;">Escala nacional, execução de ponta a ponta.</h2>
     <div class="grid">
@@ -722,7 +717,7 @@
 </section>
 
 <section id="sobre" data-theme="light">
-  <div class="section-header-band"><div class="wrap"><div class="eyebrow-text">Quem somos</div></div></div>
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Quem somos</div></div></div>
   <div class="wrap">
     <div class="layout">
       <div class="copy rv">
@@ -749,7 +744,7 @@
 </section>
 
 <section id="ciclo" data-theme="light">
-  <div class="section-header-band"><div class="wrap"><div class="eyebrow-text">Ciclo completo de telecom</div></div></div>
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Ciclo completo de telecom</div></div></div>
   <div class="wrap">
     <div class="sec-head rv">
       <h2>Seis etapas. Uma única empresa.</h2>
@@ -770,7 +765,7 @@
 </section>
 
 <section id="estrutura" data-theme="dark">
-  <div class="section-header-band"><div class="wrap"><div class="eyebrow-text">Estrutura operacional</div></div></div>
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Estrutura operacional</div></div></div>
   <div class="wrap">
     <div class="sec-head on-dark rv">
       <h2 style="color:#fff;margin-bottom:22px;">Presença própria no Sul do Brasil.</h2>
@@ -808,7 +803,7 @@
 </section>
 
 <section id="equipes" data-theme="light">
-  <div class="section-header-band"><div class="wrap"><div class="eyebrow-text">Estrutura por especialidade</div></div></div>
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Estrutura por especialidade</div></div></div>
   <div class="wrap">
     <div class="sec-head rv">
       <h2>Equipes especializadas por tipo de serviço.</h2>
@@ -882,7 +877,7 @@
 </section>
 
 <section id="plataforma" data-theme="dark">
-  <div class="section-header-band"><div class="wrap"><div class="eyebrow-text">Tecnologia própria</div></div></div>
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Tecnologia própria</div></div></div>
   <div class="wrap">
     <div class="layout">
       <div class="rv">
@@ -918,7 +913,7 @@
 </section>
 
 <section id="seguranca" data-theme="dark">
-  <div class="section-header-band"><div class="wrap"><div class="eyebrow-text">Segurança do trabalho</div></div></div>
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Segurança do trabalho</div></div></div>
   <div class="wrap">
     <div class="layout">
       <div class="rv">
@@ -943,7 +938,7 @@
 </section>
 
 <section id="cases" data-theme="light">
-  <div class="section-header-band"><div class="wrap"><div class="eyebrow-text">Cases em destaque</div></div></div>
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Cases em destaque</div></div></div>
   <div class="wrap">
     <div class="sec-head rv">
       <h2>Projetos que comprovam a capacidade de execução.</h2>
@@ -1019,7 +1014,7 @@
 </section>
 
 <section id="clientes" data-theme="light">
-  <div class="section-header-band"><div class="wrap"><div class="eyebrow-text">Principais clientes</div></div></div>
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Principais clientes</div></div></div>
   <div class="wrap">
     <div class="sec-head rv">
       <h2>Grandes operadoras e concessionárias confiam na JLE.</h2>
