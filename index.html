@@ -1392,47 +1392,75 @@
   function showBar(section){
     const text = getLabel(section);
     if(!text) return;
-    bar.style.display = 'block';
-    // Fade out, swap label, fade in
-    inner.classList.remove('visible');
-    setTimeout(()=>{
+    
+    // If the bar was completely hidden, display it and fade in
+    if (bar.style.display === 'none' || !bar.style.display) {
+      bar.style.display = 'block';
       label.textContent = text;
+      // Force reflow
+      bar.offsetHeight;
       inner.classList.add('visible');
-    }, 200);
+    } else {
+      // If it is already visible, fade out the text, swap it, and fade back in
+      inner.classList.remove('visible');
+      setTimeout(()=>{
+        label.textContent = text;
+        inner.classList.add('visible');
+      }, 180);
+    }
   }
 
   function hideBar(){
     inner.classList.remove('visible');
-    setTimeout(()=>{ bar.style.display = 'none'; }, 350);
+    setTimeout(()=>{
+      if (!inner.classList.contains('visible')) {
+        bar.style.display = 'none';
+      }
+    }, 300);
   }
 
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting && entry.intersectionRatio >= 0.08){
-        if(currentSection !== entry.target){
-          currentSection = entry.target;
-          showBar(entry.target);
-        }
+  // Monitor scroll position dynamically to determine the active section
+  function updateActiveSection(){
+    const hero = document.getElementById('hero');
+    const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
+
+    // If hero is still mostly visible (more than 60px showing at the top), hide the section bar
+    if (heroBottom > 60) {
+      if (currentSection !== null) {
+        currentSection = null;
+        hideBar();
+      }
+      return;
+    }
+
+    let activeSection = null;
+    sections.forEach(sec => {
+      if (sec.id === 'hero') return;
+      const rect = sec.getBoundingClientRect();
+      // A section is active if its top edge has scrolled past the header bar area (60px)
+      // and its bottom edge is still below that area.
+      if (rect.top <= 60 && rect.bottom > 60) {
+        activeSection = sec;
       }
     });
-  }, { threshold:[0.08] });
 
-  sections.forEach(s=>{
-    // Only sections with a section-header-band
-    if(s.querySelector('.section-header-band')) obs.observe(s);
-  });
+    if (activeSection) {
+      if (currentSection !== activeSection) {
+        currentSection = activeSection;
+        showBar(activeSection);
+      }
+    } else {
+      if (currentSection !== null) {
+        currentSection = null;
+        hideBar();
+      }
+    }
+  }
 
-  // Also hide bar when scrolled above all sections (hero area)
-  const heroObs = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){ hideBar(); currentSection = null; }
-    });
-  }, { threshold:0.1 });
-  const hero = document.querySelector('section#stats, section:first-of-type');
-  // Watch the very top of the page
-  const sentinel = document.createElement('div');
-  sentinel.style.cssText = 'position:absolute;top:0;left:0;height:1px;width:1px;';
-  document.body.prepend(sentinel);
+  window.addEventListener('scroll', updateActiveSection, { passive: true });
+  window.addEventListener('resize', updateActiveSection, { passive: true });
+  // Run on init
+  updateActiveSection();
 })();
 </script>
 </body>
