@@ -1068,10 +1068,16 @@
     margin-bottom: 20px;
   }
   .dif-card h4 {
-    font-size: 16px;
+    font-size: 16.5px;
     color: var(--navy-deep);
     line-height: 1.45;
     font-weight: 600;
+    margin: 0 0 10px 0;
+  }
+  .dif-card p {
+    font-size: 13.5px;
+    color: var(--slate);
+    line-height: 1.55;
     margin: 0;
   }
   @media(max-width: 860px) {
@@ -1132,42 +1138,49 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h4>Equipes altamente capacitadas</h4>
+        <p>Profissionais experientes oriundos de operadoras como Claro e Vivo. Gestão de operações experiente com atuação em implantação de obras de grande porte, incluindo o estado do RJ.</p>
       </div>
       <div class="dif-card rv rv2">
         <div class="dif-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h4>Atuação em todo o território nacional</h4>
+        <p>Bases ativas no Sul e capacidade de mobilização ágil para atender a qualquer projeto de infraestrutura óptica em todo o país.</p>
       </div>
       <div class="dif-card rv rv3">
         <div class="dif-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h4>Alta capacidade produtiva e escala operacional</h4>
+        <h4>Alta capacidade produtiva e escala</h4>
+        <p>Estrutura pronta para atuar com alta produtividade em múltiplas frentes simultâneas de engenharia, MND, MD e O&amp;M.</p>
       </div>
       <div class="dif-card rv">
         <div class="dif-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h4>Capacidade de Investimento</h4>
+        <p>Saúde financeira consolidada para aquisição contínua de tecnologia de ponta, frotas modernas e suporte operacional completo.</p>
       </div>
       <div class="dif-card rv rv2">
         <div class="dif-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h4>Estrutura completa de engenharia e execução</h4>
+        <h4>Engenharia e Execução Próprias</h4>
+        <p>Sem terceirizar o essencial. Acompanhamos do desenvolvimento do projeto executivo à entrega cadastrada de rede.</p>
       </div>
       <div class="dif-card rv rv3">
         <div class="dif-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h4>Rigor em segurança do trabalho</h4>
+        <p> SMS com rigor máximo. Nossas equipes contam com profissionais experientes na gestão documental crítica padrão CCR e Motiva.</p>
       </div>
       <div class="dif-card rv" style="grid-column: span 3; justify-content: center; text-align: center; max-width: 100%;">
         <div class="dif-icon" style="margin: 0 auto 16px auto;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h4 style="font-size: 18px; max-width: 600px; margin: 0 auto;">Experiência com grandes operadoras (Claro, Vivo, Huawei, Algar)</h4>
+        <h4 style="font-size: 18px; max-width: 600px; margin: 0 auto 10px auto;">Experiência com grandes players</h4>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto;">Histórico de parceria e atendimento de alta qualidade às maiores operadoras e parceiros globais como Claro, Vivo, Huawei e Algar.</p>
       </div>
     </div>
   </div>
@@ -1178,7 +1191,10 @@
     <div class="map-block rv">
       <div class="map-copy">
         <div class="eyebrow-sub on-dark">Onde atuamos</div>
-        <h3 style="font-size: 32px; color: #fff; margin-bottom: 24px;">Nossa estrutura</h3>
+        <h3 style="font-size: 32px; color: #fff; margin-bottom: 20px;">Nossa estrutura</h3>
+        <p style="color: rgba(255, 255, 255, 0.7); font-size: 14.5px; line-height: 1.6; margin-bottom: 24px; font-weight: 400;">
+          A JLE Telecom possui estrutura consolidada com bases estratégicas e capacidade de mobilização imediata em todo o território nacional. Com equipes próprias e processos internos rígidos de segurança, garantimos alto desempenho e qualidade executiva em todas as etapas da obra.
+        </p>
         <ul class="estrutura-list">
           <li><strong>Bases fixas:</strong> São Leopoldo (RS – Matriz), São José (SC) e Curitiba (PR).</li>
           <li><strong>Equipes:</strong> Equipes de fibra óptica, canalização, lançamento de rede, ativação de serviços e operações.</li>
@@ -1894,8 +1910,8 @@
     // Query and make all text elements contenteditable
     const selectors = [
       '#hero h1', '#hero p', '#sobre h2', '#sobre p',
-      '#diferenciais h2', '#diferenciais h4',
-      '#estrutura h3', '#estrutura .estrutura-list li',
+      '#diferenciais h2', '#diferenciais h4', '#diferenciais p',
+      '#estrutura h3', '#estrutura p', '#estrutura .estrutura-list li',
       '#stats h2', '#stats .num', '#stats .lbl',
       '.sec-head h2', '.sec-head p', '.panel-copy h3', '.panel-copy p', '.panel-copy .st b', '.panel-copy .st span',
       '.case-card h4', '.metrics .m b', '.metrics .m span', '#contato h2', '#contato h5', '#contato p', '#contato a',
