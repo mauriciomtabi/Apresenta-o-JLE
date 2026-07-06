@@ -1411,204 +1411,291 @@
     </div>
 
    
-        <div class="fleet-grid-block rv">
+            <div class="fleet-grid-block rv">
       <h4 style="font-size: 22px; color: #fff; margin-bottom: 8px; font-family: var(--disp); font-weight: 600;">Frota & Equipamentos Especiais</h4>
       <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 24px;">Estrutura moderna e maquinário próprio com alta capacidade produtiva para execução imediata de obras em todo o território nacional.</p>
       
-      <div class="fleet-grid">
-        <!-- 1. Perfuratriz XCMG -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/xcmg.png" alt="Perfuratriz XCMG">
-          </div>
-          <div class="fc-info">
-            <div class="fc-header">
-              <span class="fc-title">Perfuratriz Direcional XCMG</span>
-              <span class="fc-badge">4 Unid.</span>
-            </div>
-            <p class="fc-desc">Perfuratriz direcional de alta precisão para métodos não destrutivos (MND).</p>
-          </div>
-        </div>
+      <div class="fleet-filter-bar" style="display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap;">
+        <button class="table-tabbtn active" data-filter="all">Todos</button>
+        <button class="table-tabbtn" data-filter="maquinario">Maquinário & Obras</button>
+        <button class="table-tabbtn" data-filter="caminhao">Caminhões & Transporte</button>
+        <button class="table-tabbtn" data-filter="leve">Veículos Leves & Pickups</button>
+      </div>
 
-        <!-- 2. Daf 300 -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/daf.png" alt="Caminhão Daf 300">
-          </div>
+      <div class="fleet-grid">
+        <!-- 1. XCMG 230E -->
+        <div class="fleet-card" data-category="maquinario" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/xcmg.png" alt="Perfuratriz XCMG 230E"></div>
           <div class="fc-info">
             <div class="fc-header">
-              <span class="fc-title">Caminhão Daf 300</span>
+              <span class="fc-title">XCMG 230E</span>
               <span class="fc-badge">2 Unid.</span>
             </div>
-            <p class="fc-desc">Caminhão prancha pesado de alta capacidade para mobilização e transporte de perfuratrizes.</p>
+            <p class="fc-desc">Perfuratriz Direcional para obras de MND (Método Não Destrutivo).</p>
           </div>
         </div>
 
-        <!-- 3. Ford Cargo 815 E -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/cargo.png" alt="Ford Cargo 815 E">
+        <!-- 2. XCMG 360E -->
+        <div class="fleet-card" data-category="maquinario" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/xcmg.png" alt="Perfuratriz XCMG 360E"></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">XCMG 360E</span>
+              <span class="fc-badge">2 Unid.</span>
+            </div>
+            <p class="fc-desc">Perfuratriz Direcional pesada para perfurações de alta complexidade.</p>
           </div>
+        </div>
+
+        <!-- 3. Vermeer -->
+        <div class="fleet-card" data-category="maquinario" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><div class="fc-icon-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Vermeer</span>
+              <span class="fc-badge">1 Unid.</span>
+            </div>
+            <p class="fc-desc">Máquina Flex para perfuração direcional em solos diversos.</p>
+          </div>
+        </div>
+
+        <!-- 4. JCB -->
+        <div class="fleet-card" data-category="maquinario" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/retro_jcb.png" alt="Retroescavadeira JCB"></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">JCB</span>
+              <span class="fc-badge">2 Unid.</span>
+            </div>
+            <p class="fc-desc">Retroescavadeira robusta para escavações e recomposição de vias.</p>
+          </div>
+        </div>
+
+        <!-- 5. Bobcat -->
+        <div class="fleet-card" data-category="maquinario" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/bobcat.png" alt="Mini-escavadeira Bobcat"></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Bobcat</span>
+              <span class="fc-badge">3 Unid.</span>
+            </div>
+            <p class="fc-desc">Mini-escavadeira para obras em calçadas e espaços urbanos restritos.</p>
+          </div>
+        </div>
+
+        <!-- 6. XCMG Trator -->
+        <div class="fleet-card" data-category="maquinario" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><div class="fc-icon-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18v8H3zM6 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm12 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM14 6v4M10 4v6"/></svg></div></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">XCMG Trator</span>
+              <span class="fc-badge">1 Unid.</span>
+            </div>
+            <p class="fc-desc">Trator de Esteira voltado para movimentação de solo e terraplanagem.</p>
+          </div>
+        </div>
+
+        <!-- 7. Case Escavadeira -->
+        <div class="fleet-card" data-category="maquinario" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><div class="fc-icon-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18v8H3zM6 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm12 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM14 6v4M10 4v6"/></svg></div></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Case XC220</span>
+              <span class="fc-badge">2 Unid.</span>
+            </div>
+            <p class="fc-desc">Escavadeira Hidráulica de grande porte para alta performance em valas.</p>
+          </div>
+        </div>
+
+        <!-- 8. Ford / Caminhão Cargo 815 E -->
+        <div class="fleet-card" data-category="caminhao" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/cargo.png" alt="Ford Cargo 815 E"></div>
           <div class="fc-info">
             <div class="fc-header">
               <span class="fc-title">Ford Cargo 815 E</span>
               <span class="fc-badge">1 Unid.</span>
             </div>
-            <p class="fc-desc">Equipado com guindaste hidráulico (Munck), cabine auxiliar e carroceria.</p>
+            <p class="fc-desc">Equipado com Guindaste Hidráulico (Munck), cabine auxiliar e carroceria.</p>
           </div>
         </div>
 
-        <!-- 4. Retroescavadeira JCB -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/retro_jcb.png" alt="Retroescavadeira JCB">
-          </div>
+        <!-- 9. Volks 8.150 -->
+        <div class="fleet-card" data-category="caminhao" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/mercedez.png" alt="Volks 8.150"></div>
           <div class="fc-info">
             <div class="fc-header">
-              <span class="fc-title">Retroescavadeira JCB</span>
-              <span class="fc-badge">2 Unid.</span>
-            </div>
-            <p class="fc-desc">Utilizada para escavação direta, abertura de valas e recomposição de pavimentos.</p>
-          </div>
-        </div>
-
-        <!-- 5. Bobcat -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/bobcat.png" alt="Mini-escavadeira Bobcat">
-          </div>
-          <div class="fc-info">
-            <div class="fc-header">
-              <span class="fc-title">Mini-escavadeira Bobcat</span>
+              <span class="fc-title">Volks 8.150</span>
               <span class="fc-badge">3 Unid.</span>
             </div>
-            <p class="fc-desc">Agilidade extrema para abertura de valas em calçadas e espaços urbanos reduzidos.</p>
+            <p class="fc-desc">Caminhão adaptado com porta escadas para implantação aérea.</p>
           </div>
         </div>
 
-        <!-- 6. Volvo 270 -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/volvo.png" alt="Caminhão Volvo 270">
-          </div>
+        <!-- 10. Ford F12000 -->
+        <div class="fleet-card" data-category="caminhao" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/mercedez.png" alt="Ford F12000"></div>
           <div class="fc-info">
             <div class="fc-header">
-              <span class="fc-title">Caminhão Volvo 270</span>
+              <span class="fc-title">Ford F12000</span>
+              <span class="fc-badge">2 Unid.</span>
+            </div>
+            <p class="fc-desc">Caminhão de médio porte equipado com porta escadas, adaptado.</p>
+          </div>
+        </div>
+
+        <!-- 11. Mercedes -->
+        <div class="fleet-card" data-category="caminhao" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/cargo.png" alt="Mercedes Guindauto"></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Mercedes Guindauto</span>
+              <span class="fc-badge">3 Unid.</span>
+            </div>
+            <p class="fc-desc">Equipado com carroceria operacional e Guindauto.</p>
+          </div>
+        </div>
+
+        <!-- 12. Ford Cargo Caçamba -->
+        <div class="fleet-card" data-category="caminhao" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/cargo.png" alt="Ford Cargo Caçamba"></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Ford Cargo Caçamba</span>
+              <span class="fc-badge">2 Unid.</span>
+            </div>
+            <p class="fc-desc">Caminhão basculante para transporte e descarte de materiais civis.</p>
+          </div>
+        </div>
+
+        <!-- 13. Volks Caçamba -->
+        <div class="fleet-card" data-category="caminhao" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/cargo.png" alt="Volks Caçamba"></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Volks Caçamba 8.150</span>
+              <span class="fc-badge">3 Unid.</span>
+            </div>
+            <p class="fc-desc">Caminhão leve equipado com Caçamba Basculante.</p>
+          </div>
+        </div>
+
+        <!-- 14. Daff 300 -->
+        <div class="fleet-card" data-category="caminhao" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/daf.png" alt="Daff 300"></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Daff 300 prancha</span>
+              <span class="fc-badge">2 Unid.</span>
+            </div>
+            <p class="fc-desc">Caminhão Prancha pesado de alta capacidade para logística de maquinário.</p>
+          </div>
+        </div>
+
+        <!-- 15. Volvo 270 -->
+        <div class="fleet-card" data-category="caminhao" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/volvo.png" alt="Volvo 270"></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Volvo 270 prancha</span>
               <span class="fc-badge">1 Unid.</span>
             </div>
-            <p class="fc-desc">Caminhão prancha operacional para transporte rápido de equipamentos.</p>
+            <p class="fc-desc">Caminhão Prancha para mobilização de perfuratrizes e escavadeiras.</p>
           </div>
         </div>
 
-        <!-- 7. Chevrolet S10 / Strada -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/s10.png" alt="Pick-up S10">
-          </div>
+        <!-- 16. Ford Cargo 2220 -->
+        <div class="fleet-card" data-category="caminhao" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/volvo.png" alt="Ford Cargo 2220"></div>
           <div class="fc-info">
             <div class="fc-header">
-              <span class="fc-title">S10 / Strada Flex</span>
-              <span class="fc-badge">4 Unid.</span>
+              <span class="fc-title">Ford Cargo 2220 prancha</span>
+              <span class="fc-badge">1 Unid.</span>
             </div>
-            <p class="fc-desc">Veículos de apoio técnico equipados com porta-escadas e ferramentas de campo.</p>
+            <p class="fc-desc">Caminhão Prancha de suporte logístico rápido.</p>
           </div>
         </div>
 
-        <!-- 8. Fiat Uno Vivace -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/uno.png" alt="Fiat Uno Vivace">
-          </div>
+        <!-- 17. Fiat Uno VIVACE -->
+        <div class="fleet-card" data-category="leve" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/uno.png" alt="Fiat Uno VIVACE"></div>
           <div class="fc-info">
             <div class="fc-header">
-              <span class="fc-title">Fiat Uno Vivace</span>
-              <span class="fc-badge">6 Unid.</span>
+              <span class="fc-title">Fiat Uno VIVACE</span>
+              <span class="fc-badge">2 Unid.</span>
             </div>
-            <p class="fc-desc">Veículos destinados a equipes de Segurança do Trabalho e Fiscalização.</p>
+            <p class="fc-desc">Veículo de suporte técnico dedicado à Segurança do Trabalho.</p>
           </div>
         </div>
 
-        <!-- 9. Fiat Mobi -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/mobis.png" alt="Fiat Mobi">
+        <!-- 18. Fiat Uno 1.0 -->
+        <div class="fleet-card" data-category="leve" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/uno.png" alt="Fiat Uno 1.0"></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Fiat Uno 1.0</span>
+              <span class="fc-badge">7 Unid.</span>
+            </div>
+            <p class="fc-desc">Veículos leves dedicados à Supervisão e Fiscalização das frentes.</p>
           </div>
+        </div>
+
+        <!-- 19. Fiat Mobi -->
+        <div class="fleet-card" data-category="leve" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/mobis.png" alt="Fiat Mobi"></div>
           <div class="fc-info">
             <div class="fc-header">
               <span class="fc-title">Fiat Mobi</span>
+              <span class="fc-badge">8 Unid.</span>
+            </div>
+            <p class="fc-desc">Veículos de apoio dedicados à Coordenação e engenharia técnica.</p>
+          </div>
+        </div>
+
+        <!-- 20. Ford Ranger -->
+        <div class="fleet-card" data-category="leve" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/s10.png" alt="Ford Ranger"></div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Ford Ranger</span>
               <span class="fc-badge">2 Unid.</span>
             </div>
-            <p class="fc-desc">Dedicados à Coordenação e supervisão técnica em trânsito urbano.</p>
+            <p class="fc-desc">Camionete 4x4 de suporte e apoio técnico rápido.</p>
           </div>
         </div>
 
-        <!-- 10. Mercedes-Benz / Volks -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/mercedez.png" alt="Caminhão Mercedes-Benz">
-          </div>
+        <!-- 21. Montana -->
+        <div class="fleet-card" data-category="leve" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/s10.png" alt="Chevrolet Montana"></div>
           <div class="fc-info">
             <div class="fc-header">
-              <span class="fc-title">Volks / Mercedes-Benz</span>
-              <span class="fc-badge">3 Unid.</span>
+              <span class="fc-title">Chevrolet Montana</span>
+              <span class="fc-badge">12 Unid.</span>
             </div>
-            <p class="fc-desc">Caminhões operacionais adaptados com porta-escadas para serviços aéreos.</p>
+            <p class="fc-desc">Equipada com porta escadas, adaptada para frentes rápidas.</p>
           </div>
         </div>
 
-        <!-- 11. Perfuratriz Vermeer -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <div class="fc-icon-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          </div>
+        <!-- 22. Strada Flex 1.4 -->
+        <div class="fleet-card" data-category="leve" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/s10.png" alt="Fiat Strada Flex"></div>
           <div class="fc-info">
             <div class="fc-header">
-              <span class="fc-title">Perfuratriz Vermeer</span>
-              <span class="fc-badge">3 Unid.</span>
+              <span class="fc-title">Fiat Strada Flex</span>
+              <span class="fc-badge">26 Unid.</span>
             </div>
-            <p class="fc-desc">Equipamento para perfuração direcional (MND) em solos com maior resistência.</p>
+            <p class="fc-desc">Pick-up operacional equipada com porta escadas, adaptada.</p>
           </div>
         </div>
 
-        <!-- 12. Caçamba Basculante -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <div class="fc-icon-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-          </div>
+        <!-- 23. Saveiro -->
+        <div class="fleet-card" data-category="leve" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+          <div class="fc-img"><img src="IMAGENS_OTIMIZADAS/VEICULOS/s10.png" alt="VW Saveiro"></div>
           <div class="fc-info">
             <div class="fc-header">
-              <span class="fc-title">Caçamba Basculante</span>
-              <span class="fc-badge">3 Unid.</span>
+              <span class="fc-title">VW Saveiro</span>
+              <span class="fc-badge">19 Unid.</span>
             </div>
-            <p class="fc-desc">Caminhão basculante para transporte e remoção de entulhos de obras civis.</p>
-          </div>
-        </div>
-
-        <!-- 13. Trator de Esteira XCMG -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <div class="fc-icon-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18v8H3zM6 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm12 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM14 6v4M10 4v6"/></svg></div>
-          </div>
-          <div class="fc-info">
-            <div class="fc-header">
-              <span class="fc-title">Trator de Esteira XCMG</span>
-              <span class="fc-badge">2 Unid.</span>
-            </div>
-            <p class="fc-desc">Maquinário pesado voltado para movimentação de terras e terraplanagem.</p>
-          </div>
-        </div>
-
-        <!-- 14. Escavadeira Case XC220 -->
-        <div class="fleet-card">
-          <div class="fc-img">
-            <div class="fc-icon-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18v8H3zM6 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm12 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM14 6v4M10 4v6"/></svg></div>
-          </div>
-          <div class="fc-info">
-            <div class="fc-header">
-              <span class="fc-title">Escavadeira XC220</span>
-              <span class="fc-badge">2 Unid.</span>
-            </div>
-            <p class="fc-desc">Escavadeira hidráulica de grande porte para alta performance em abertura de valas.</p>
+            <p class="fc-desc">Pick-up operacional equipada com porta escadas, adaptada.</p>
           </div>
         </div>
       </div>
@@ -2447,6 +2534,37 @@
         targetPanel.style.display = 'block';
         targetPanel.classList.add('active');
       }
+    });
+  });
+})();
+</script>
+<script>
+// ===== FLEET GRID FILTER =====
+(function(){
+  const filterBtns = document.querySelectorAll('.fleet-filter-bar .table-tabbtn');
+  const cards = document.querySelectorAll('.fleet-grid .fleet-card');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      const filterVal = btn.dataset.filter;
+      cards.forEach(card => {
+        if (filterVal === 'all' || card.dataset.category === filterVal) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 10);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 250);
+        }
+      });
     });
   });
 })();
