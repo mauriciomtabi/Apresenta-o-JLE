@@ -1094,6 +1094,104 @@
     }
   }
 
+
+  /* ===== PREMIUM TABLE STYLES ===== */
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    background: rgba(10, 35, 56, 0.5);
+    backdrop-filter: blur(10px);
+    margin-bottom: 40px;
+  }
+  .premium-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .premium-table th {
+    background: rgba(8, 28, 46, 0.8);
+    color: #fff;
+    font-weight: 600;
+    padding: 16px 20px;
+    border-bottom: 2px solid var(--orange);
+    text-transform: uppercase;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+  .premium-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .premium-table tbody tr {
+    transition: background 0.2s ease;
+  }
+  .premium-table tbody tr:hover {
+    background: rgba(242, 153, 74, 0.05);
+  }
+  .premium-table .sub-row {
+    padding: 6px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+  }
+  .premium-table .sub-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .premium-table .sub-row:first-child {
+    padding-top: 0;
+  }
+  @media(max-width: 820px) {
+    .premium-table {
+      font-size: 13px;
+    }
+    .premium-table th, .premium-table td {
+      padding: 12px 14px;
+    }
+  }
+
+  /* ===== TABLE TABS STYLES ===== */
+  .table-tabbar {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+  }
+  .table-tabbtn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: clamp(14px, 1.8vw, 17px);
+    font-weight: 600;
+    font-family: var(--disp);
+    cursor: pointer;
+    padding: 8px 16px;
+    position: relative;
+    transition: color 0.25s ease;
+  }
+  .table-tabbtn:hover {
+    color: #fff;
+  }
+  .table-tabbtn.active {
+    color: var(--orange-light);
+  }
+  .table-tabbtn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--orange);
+    border-radius: 3px 3px 0 0;
+  }
+
   </style>
 </head>
 <body>
@@ -1180,8 +1278,241 @@
         <div id="realMap"></div>
       </div>
     </div>
+    <div class="team-composition-block rv" style="margin-top: 60px;">
+      <div class="table-tabbar">
+        <button class="table-tabbtn active" data-table-tab="equipes">Composição de Equipes</button>
+        <button class="table-tabbtn" data-table-tab="veiculos">Frota e Equipamentos</button>
+      </div>
 
-   
+      <div class="table-tabpanel active" id="table-tab-equipes">
+        <div class="table-responsive">
+          <table class="premium-table">
+            <thead>
+              <tr>
+                <th>Equipes</th>
+                <th>Função / Descrição</th>
+                <th style="text-align: center;">Colaboradores por Equipe</th>
+                <th style="text-align: center;">Total de Equipes</th>
+                <th style="text-align: center; color: var(--orange-light);">Total de Pessoas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Coordenação de Obra</b></td>
+                <td>Coordenador</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center; font-weight: 600;">1</td>
+              </tr>
+              <tr>
+                <td><b>Engenharia de Segurança</b></td>
+                <td>Engenheiro / Técnico de Segurança do Trabalho</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">2</td>
+                <td style="text-align: center; font-weight: 600;">2</td>
+              </tr>
+              <tr>
+                <td><b>Engenharia Civil</b></td>
+                <td>Engenheiro Civil</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center; font-weight: 600;">1</td>
+              </tr>
+              <tr>
+                <td><b>Projetos / ASBUILT</b></td>
+                <td>
+                  <div class="sub-row">Projetista</div>
+                  <div class="sub-row">Cadista</div>
+                  <div class="sub-row">Auxiliar de Levantamento</div>
+                </td>
+                <td style="text-align: center;">
+                  <div class="sub-row">1</div>
+                  <div class="sub-row">1</div>
+                  <div class="sub-row">1</div>
+                </td>
+                <td style="text-align: center; vertical-align: middle;">3</td>
+                <td style="text-align: center; vertical-align: middle; font-weight: 600; color: var(--orange-light);">9</td>
+              </tr>
+              <tr>
+                <td><b>Supervisão</b></td>
+                <td>Supervisor de Campo</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">4</td>
+                <td style="text-align: center; font-weight: 600;">4</td>
+              </tr>
+              <tr>
+                <td><b>Classe L — Lançamento de Cabos</b></td>
+                <td>
+                  <div class="sub-row">Encarregado de Classe L</div>
+                  <div class="sub-row">Oficial de Linha</div>
+                  <div class="sub-row">Auxiliar de Linha</div>
+                </td>
+                <td style="text-align: center;">
+                  <div class="sub-row">1</div>
+                  <div class="sub-row">2</div>
+                  <div class="sub-row">1</div>
+                </td>
+                <td style="text-align: center; vertical-align: middle;">2</td>
+                <td style="text-align: center; vertical-align: middle; font-weight: 600; color: var(--orange-light);">8</td>
+              </tr>
+              <tr>
+                <td><b>Classe G — Equipe de MND</b></td>
+                <td>
+                  <div class="sub-row">Encarregado de MND</div>
+                  <div class="sub-row">Navegador</div>
+                  <div class="sub-row">Operador de MND</div>
+                </td>
+                <td style="text-align: center;">
+                  <div class="sub-row">1</div>
+                  <div class="sub-row">1</div>
+                  <div class="sub-row">1</div>
+                </td>
+                <td style="text-align: center; vertical-align: middle;">4</td>
+                <td style="text-align: center; vertical-align: middle; font-weight: 600; color: var(--orange-light);">12</td>
+              </tr>
+              <tr>
+                <td><b>Classe G — Equipe de Canalização</b></td>
+                <td>
+                  <div class="sub-row">Oficial de Obras</div>
+                  <div class="sub-row">Auxiliar de Obras</div>
+                  <div class="sub-row">Pedreiro</div>
+                  <div class="sub-row">Operador de Máquinas</div>
+                </td>
+                <td style="text-align: center;">
+                  <div class="sub-row">1</div>
+                  <div class="sub-row">2</div>
+                  <div class="sub-row">2</div>
+                  <div class="sub-row">1</div>
+                </td>
+                <td style="text-align: center; vertical-align: middle;">8</td>
+                <td style="text-align: center; vertical-align: middle; font-weight: 600; color: var(--orange-light);">48</td>
+              </tr>
+              <tr>
+                <td><b>Máquinas Especiais</b></td>
+                <td>Operador de Retroescavadeira / Mini Carregadeira</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">8</td>
+                <td style="text-align: center; font-weight: 600;">8</td>
+              </tr>
+              <tr>
+                <td><b>Classe F — Fusão de Testes</b></td>
+                <td>
+                  <div class="sub-row">Técnico de F.O. (Fusão)</div>
+                  <div class="sub-row">Auxiliar Técnico de F.O.</div>
+                </td>
+                <td style="text-align: center;">
+                  <div class="sub-row">1</div>
+                  <div class="sub-row">1</div>
+                </td>
+                <td style="text-align: center; vertical-align: middle;">3</td>
+                <td style="text-align: center; vertical-align: middle; font-weight: 600; color: var(--orange-light);">6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="table-tabpanel" id="table-tab-veiculos" style="display:none;">
+        <div class="table-responsive">
+          <table class="premium-table">
+            <thead>
+              <tr>
+                <th>Marca / Modelo</th>
+                <th style="text-align: center;">Unidades</th>
+                <th>Observações / Aplicação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Ford / Caminhão Cargo 815 E</b></td>
+                <td style="text-align: center; font-weight: 600;">1</td>
+                <td>Com Guindaste Hidráulico, cabine auxiliar e carroceria</td>
+              </tr>
+              <tr>
+                <td><b>Volks / Caminhão 8.150</b></td>
+                <td style="text-align: center; font-weight: 600;">3</td>
+                <td>Equipado com porta escadas, adaptado para operações</td>
+              </tr>
+              <tr>
+                <td><b>Ford F12000</b></td>
+                <td style="text-align: center; font-weight: 600;">2</td>
+                <td>Equipado com porta escadas, adaptado</td>
+              </tr>
+              <tr>
+                <td><b>Caçamba</b></td>
+                <td style="text-align: center; font-weight: 600;">3</td>
+                <td>Caçamba Basculante para remoção de solo e entulhos</td>
+              </tr>
+              <tr>
+                <td><b>Strada Flex - 1.4</b></td>
+                <td style="text-align: center; font-weight: 600;">4</td>
+                <td>Equipada com porta escadas, adaptada</td>
+              </tr>
+              <tr>
+                <td><b>Fiat / Uno VIVACE</b></td>
+                <td style="text-align: center; font-weight: 600;">2</td>
+                <td>Veículo dedicado à equipe de Segurança do Trabalho (SMS)</td>
+              </tr>
+              <tr>
+                <td><b>Fiat / Uno Vivace 1.0</b></td>
+                <td style="text-align: center; font-weight: 600;">4</td>
+                <td>Veículos dedicados à Supervisão / Fiscalização de campo</td>
+              </tr>
+              <tr>
+                <td><b>Fiat / Mobi</b></td>
+                <td style="text-align: center; font-weight: 600;">2</td>
+                <td>Veículos dedicados à equipe de Coordenação</td>
+              </tr>
+              <tr>
+                <td><b>Daff 300</b></td>
+                <td style="text-align: center; font-weight: 600;">2</td>
+                <td>Caminhão Prancha para transporte pesado de maquinário</td>
+              </tr>
+              <tr>
+                <td><b>Volvo 270</b></td>
+                <td style="text-align: center; font-weight: 600;">1</td>
+                <td>Caminhão Prancha para mobilização de equipamentos</td>
+              </tr>
+              <tr>
+                <td><b>Ford Cargo 2220</b></td>
+                <td style="text-align: center; font-weight: 600;">1</td>
+                <td>Caminhão Prancha para mobilização</td>
+              </tr>
+              <tr>
+                <td><b>XCMG</b></td>
+                <td style="text-align: center; font-weight: 600; color: var(--orange-light);">4</td>
+                <td>Perfuratriz Direcional para obras de MND (Furo Direcional)</td>
+              </tr>
+              <tr>
+                <td><b>Vermeer</b></td>
+                <td style="text-align: center; font-weight: 600; color: var(--orange-light);">3</td>
+                <td>Máquina Flex para perfuração direcional em solos diversos</td>
+              </tr>
+              <tr>
+                <td><b>Case</b></td>
+                <td style="text-align: center; font-weight: 600; color: var(--orange-light);">2</td>
+                <td>Retroescavadeira para escavação e recomposição de vias</td>
+              </tr>
+              <tr>
+                <td><b>Bobcat</b></td>
+                <td style="text-align: center; font-weight: 600; color: var(--orange-light);">3</td>
+                <td>Mini-escavadeira para obras em calçadas e espaços urbanos restritos</td>
+              </tr>
+              <tr>
+                <td><b>XCMG</b></td>
+                <td style="text-align: center; font-weight: 600; color: var(--orange-light);">2</td>
+                <td>Trator de Esteira para movimentação de solo e terraplanagem</td>
+              </tr>
+              <tr>
+                <td><b>Case</b></td>
+                <td style="text-align: center; font-weight: 600; color: var(--orange-light);">2</td>
+                <td>Escavadeira Hidráulica XC220 de grande porte</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <section id="stats" data-theme="dark">
@@ -1203,11 +1534,10 @@
     <div class="layout">
       <div class="rv">
         <h2 style="color:#fff;margin-bottom:16px;">Monitoramento completo, do técnico em campo ao relatório final.</h2>
-        <p style="color:rgba(255,255,255,0.6);font-size:15px;line-height:1.7;">A plataforma <b style="color:#fff;">Serviços JLE</b> acompanha cada etapa da execução em tempo real — do lançamento em campo até a entrega documentada ao cliente.</p>
+        <p style="color:rgba(255,255,255,0.6);font-size:15px;line-height:1.7;">A plataforma <b style="color:#fff;">Serviços JLE</b> acompanha cada etapa da execução em <span style="color:var(--orange);font-weight:600;">tempo real</span>.</p>
         <div class="feat-list">
           <div class="feat"><div class="f-ic">%</div><div class="f-txt"><b>Progresso em tempo real</b><span>Acompanhamento do avanço de cada serviço, trecho a trecho.</span></div></div>
-          <div class="feat"><div class="f-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 20 14.5 20 9A8 8 0 0 0 4 9C4 14.5 12 21 12 21Z" stroke="#F2994A" stroke-width="2"/><circle cx="12" cy="9" r="2.5" stroke="#F2994A" stroke-width="2"/></svg></div><div class="f-txt"><b>Mapeamento georreferenciado da rede</b><span>Cada etapa registrada e localizada com precisão.</span></div></div>
-          <div class="feat"><div class="f-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4V4Z" stroke="#F2994A" stroke-width="2"/><path d="M4 9h16M9 9v11" stroke="#F2994A" stroke-width="2"/></svg></div><div class="f-txt"><b>Relatório fotográfico</b><span>Relatório fotográfico de evidências por etapa.</span></div></div>
+          <div class="feat"><div class="f-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#F2994A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="#F2994A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="#F2994A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#F2994A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="f-txt"><b>Acesso exclusivo do cliente</b><span>Disponibilizamos acesso direto à plataforma para o cliente acompanhar a execução em tempo real.</span></div></div>
         </div>
       </div>
       <div class="deck-stack rv rv2">
@@ -1810,6 +2140,7 @@
       '#hero h1', '#hero p', '#sobre h2', '#sobre p',
       '#diferenciais h2', '#diferenciais h4', '#diferenciais p',
       '#estrutura h3', '#estrutura p', '#estrutura .estrutura-list li',
+      '#estrutura th', '#estrutura td', '#estrutura b', '#estrutura .sub-row',
       '#stats h2', '#stats .num', '#stats .lbl',
       '.sec-head h2', '.sec-head p',
       '.case-card h4', '.metrics .m b', '.metrics .m span', '#contato h2', '#contato h5', '#contato p', '#contato a',
@@ -1977,5 +2308,26 @@
 })();
 </script>
 
+<script>
+// ===== TABLE TABS SWITCHER =====
+(function(){
+  const tableBtns = document.querySelectorAll('.table-tabbtn');
+  tableBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tableBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.table-tabpanel').forEach(p => {
+        p.style.display = 'none';
+        p.classList.remove('active');
+      });
+      const targetPanel = document.getElementById('table-tab-' + btn.dataset.tableTab);
+      if (targetPanel) {
+        targetPanel.style.display = 'block';
+        targetPanel.classList.add('active');
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
