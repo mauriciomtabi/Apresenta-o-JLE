@@ -1192,6 +1192,113 @@
     border-radius: 3px 3px 0 0;
   }
 
+
+  /* ===== PREMIUM FLEET CATALOG ===== */
+  .fleet-grid-block {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .fleet-card {
+    background: rgba(10, 35, 56, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 20px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+  .fleet-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--orange);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  .fleet-card .fc-img {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(242, 153, 74, 0.08) 0%, rgba(10, 35, 56, 0) 70%);
+    border-radius: 14px;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fleet-card .fc-img img {
+    max-width: 90%;
+    max-height: 85%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+    transition: transform 0.4s ease;
+  }
+  .fleet-card:hover .fc-img img {
+    transform: scale(1.08) translateY(-4px);
+  }
+  .fleet-card .fc-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .fleet-card .fc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .fleet-card .fc-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    font-family: var(--disp);
+    line-height: 1.3;
+  }
+  .fleet-card .fc-badge {
+    background: rgba(242, 153, 74, 0.15);
+    border: 1px solid rgba(242, 153, 74, 0.3);
+    color: var(--orange-light);
+    font-size: 11px;
+    font-weight: 600;
+    font-family: var(--mono);
+    padding: 3px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .fleet-card .fc-desc {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.5;
+  }
+  .fleet-card .fc-icon-fallback {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+  }
+  @media(max-width: 820px) {
+    .fleet-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+  }
+
   </style>
 </head>
 <body>
@@ -1245,238 +1352,205 @@
     </div>
 
    
-    <div class="team-composition-block rv" style="margin-top: 60px;">
-      <div class="table-tabbar">
-        <button class="table-tabbtn active" data-table-tab="equipes">Composição de Equipes</button>
-        <button class="table-tabbtn" data-table-tab="veiculos">Frota e Equipamentos</button>
-      </div>
-
-      <div class="table-tabpanel active" id="table-tab-equipes">
-        <div class="table-responsive">
-          <table class="premium-table">
-            <thead>
-              <tr>
-                <th>Equipes</th>
-                <th>Função / Descrição</th>
-                <th style="text-align: center;">Colaboradores por Equipe</th>
-                <th style="text-align: center;">Total de Equipes</th>
-                <th style="text-align: center; color: var(--orange-light);">Total de Pessoas</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><b>Coordenação de Obra</b></td>
-                <td>Coordenador</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center; font-weight: 600;">1</td>
-              </tr>
-              <tr>
-                <td><b>Engenharia de Segurança</b></td>
-                <td>Engenheiro / Técnico de Segurança do Trabalho</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center;">2</td>
-                <td style="text-align: center; font-weight: 600;">2</td>
-              </tr>
-              <tr>
-                <td><b>Engenharia Civil</b></td>
-                <td>Engenheiro Civil</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center; font-weight: 600;">1</td>
-              </tr>
-              <tr>
-                <td><b>Projetos / ASBUILT</b></td>
-                <td>
-                  <div class="sub-row">Projetista</div>
-                  <div class="sub-row">Cadista</div>
-                  <div class="sub-row">Auxiliar de Levantamento</div>
-                </td>
-                <td style="text-align: center;">
-                  <div class="sub-row">1</div>
-                  <div class="sub-row">1</div>
-                  <div class="sub-row">1</div>
-                </td>
-                <td style="text-align: center; vertical-align: middle;">3</td>
-                <td style="text-align: center; vertical-align: middle; font-weight: 600; color: var(--orange-light);">9</td>
-              </tr>
-              <tr>
-                <td><b>Supervisão</b></td>
-                <td>Supervisor de Campo</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center;">4</td>
-                <td style="text-align: center; font-weight: 600;">4</td>
-              </tr>
-              <tr>
-                <td><b>Classe L — Lançamento de Cabos</b></td>
-                <td>
-                  <div class="sub-row">Encarregado de Classe L</div>
-                  <div class="sub-row">Oficial de Linha</div>
-                  <div class="sub-row">Auxiliar de Linha</div>
-                </td>
-                <td style="text-align: center;">
-                  <div class="sub-row">1</div>
-                  <div class="sub-row">2</div>
-                  <div class="sub-row">1</div>
-                </td>
-                <td style="text-align: center; vertical-align: middle;">2</td>
-                <td style="text-align: center; vertical-align: middle; font-weight: 600; color: var(--orange-light);">8</td>
-              </tr>
-              <tr>
-                <td><b>Classe G — Equipe de MND</b></td>
-                <td>
-                  <div class="sub-row">Encarregado de MND</div>
-                  <div class="sub-row">Navegador</div>
-                  <div class="sub-row">Operador de MND</div>
-                </td>
-                <td style="text-align: center;">
-                  <div class="sub-row">1</div>
-                  <div class="sub-row">1</div>
-                  <div class="sub-row">1</div>
-                </td>
-                <td style="text-align: center; vertical-align: middle;">4</td>
-                <td style="text-align: center; vertical-align: middle; font-weight: 600; color: var(--orange-light);">12</td>
-              </tr>
-              <tr>
-                <td><b>Classe G — Equipe de Canalização</b></td>
-                <td>
-                  <div class="sub-row">Oficial de Obras</div>
-                  <div class="sub-row">Auxiliar de Obras</div>
-                  <div class="sub-row">Pedreiro</div>
-                  <div class="sub-row">Operador de Máquinas</div>
-                </td>
-                <td style="text-align: center;">
-                  <div class="sub-row">1</div>
-                  <div class="sub-row">2</div>
-                  <div class="sub-row">2</div>
-                  <div class="sub-row">1</div>
-                </td>
-                <td style="text-align: center; vertical-align: middle;">8</td>
-                <td style="text-align: center; vertical-align: middle; font-weight: 600; color: var(--orange-light);">48</td>
-              </tr>
-              <tr>
-                <td><b>Máquinas Especiais</b></td>
-                <td>Operador de Retroescavadeira / Mini Carregadeira</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center;">8</td>
-                <td style="text-align: center; font-weight: 600;">8</td>
-              </tr>
-              <tr>
-                <td><b>Classe F — Fusão de Testes</b></td>
-                <td>
-                  <div class="sub-row">Técnico de F.O. (Fusão)</div>
-                  <div class="sub-row">Auxiliar Técnico de F.O.</div>
-                </td>
-                <td style="text-align: center;">
-                  <div class="sub-row">1</div>
-                  <div class="sub-row">1</div>
-                </td>
-                <td style="text-align: center; vertical-align: middle;">3</td>
-                <td style="text-align: center; vertical-align: middle; font-weight: 600; color: var(--orange-light);">6</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="fleet-grid-block rv">
+      <h4 style="font-size: 22px; color: #fff; margin-bottom: 8px; font-family: var(--disp); font-weight: 600;">Frota & Equipamentos Especiais</h4>
+      <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 24px;">Estrutura moderna e maquinário próprio com alta capacidade produtiva para execução imediata de obras em todo o território nacional.</p>
+      
+      <div class="fleet-grid">
+        <!-- 1. Perfuratriz XCMG -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <img src="IMAGENS_OTIMIZADAS/VEICULOS/xcmg.png" alt="Perfuratriz XCMG">
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Perfuratriz Direcional XCMG</span>
+              <span class="fc-badge">4 Unid.</span>
+            </div>
+            <p class="fc-desc">Perfuratriz direcional de alta precisão para métodos não destrutivos (MND).</p>
+          </div>
         </div>
-      </div>
 
-      <div class="table-tabpanel" id="table-tab-veiculos" style="display:none;">
-        <div class="table-responsive">
-          <table class="premium-table">
-            <thead>
-              <tr>
-                <th>Marca / Modelo</th>
-                <th style="text-align: center;">Unidades</th>
-                <th>Observações / Aplicação</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><b>Ford / Caminhão Cargo 815 E</b></td>
-                <td style="text-align: center; font-weight: 600;">1</td>
-                <td>Com Guindaste Hidráulico, cabine auxiliar e carroceria</td>
-              </tr>
-              <tr>
-                <td><b>Volks / Caminhão 8.150</b></td>
-                <td style="text-align: center; font-weight: 600;">3</td>
-                <td>Equipado com porta escadas, adaptado para operações</td>
-              </tr>
-              <tr>
-                <td><b>Ford F12000</b></td>
-                <td style="text-align: center; font-weight: 600;">2</td>
-                <td>Equipado com porta escadas, adaptado</td>
-              </tr>
-              <tr>
-                <td><b>Caçamba</b></td>
-                <td style="text-align: center; font-weight: 600;">3</td>
-                <td>Caçamba Basculante para remoção de solo e entulhos</td>
-              </tr>
-              <tr>
-                <td><b>Strada Flex - 1.4</b></td>
-                <td style="text-align: center; font-weight: 600;">4</td>
-                <td>Equipada com porta escadas, adaptada</td>
-              </tr>
-              <tr>
-                <td><b>Fiat / Uno VIVACE</b></td>
-                <td style="text-align: center; font-weight: 600;">2</td>
-                <td>Veículo dedicado à equipe de Segurança do Trabalho (SMS)</td>
-              </tr>
-              <tr>
-                <td><b>Fiat / Uno Vivace 1.0</b></td>
-                <td style="text-align: center; font-weight: 600;">4</td>
-                <td>Veículos dedicados à Supervisão / Fiscalização de campo</td>
-              </tr>
-              <tr>
-                <td><b>Fiat / Mobi</b></td>
-                <td style="text-align: center; font-weight: 600;">2</td>
-                <td>Veículos dedicados à equipe de Coordenação</td>
-              </tr>
-              <tr>
-                <td><b>Daff 300</b></td>
-                <td style="text-align: center; font-weight: 600;">2</td>
-                <td>Caminhão Prancha para transporte pesado de maquinário</td>
-              </tr>
-              <tr>
-                <td><b>Volvo 270</b></td>
-                <td style="text-align: center; font-weight: 600;">1</td>
-                <td>Caminhão Prancha para mobilização de equipamentos</td>
-              </tr>
-              <tr>
-                <td><b>Ford Cargo 2220</b></td>
-                <td style="text-align: center; font-weight: 600;">1</td>
-                <td>Caminhão Prancha para mobilização</td>
-              </tr>
-              <tr>
-                <td><b>XCMG</b></td>
-                <td style="text-align: center; font-weight: 600; color: var(--orange-light);">4</td>
-                <td>Perfuratriz Direcional para obras de MND (Furo Direcional)</td>
-              </tr>
-              <tr>
-                <td><b>Vermeer</b></td>
-                <td style="text-align: center; font-weight: 600; color: var(--orange-light);">3</td>
-                <td>Máquina Flex para perfuração direcional em solos diversos</td>
-              </tr>
-              <tr>
-                <td><b>Case</b></td>
-                <td style="text-align: center; font-weight: 600; color: var(--orange-light);">2</td>
-                <td>Retroescavadeira para escavação e recomposição de vias</td>
-              </tr>
-              <tr>
-                <td><b>Bobcat</b></td>
-                <td style="text-align: center; font-weight: 600; color: var(--orange-light);">3</td>
-                <td>Mini-escavadeira para obras em calçadas e espaços urbanos restritos</td>
-              </tr>
-              <tr>
-                <td><b>XCMG</b></td>
-                <td style="text-align: center; font-weight: 600; color: var(--orange-light);">2</td>
-                <td>Trator de Esteira para movimentação de solo e terraplanagem</td>
-              </tr>
-              <tr>
-                <td><b>Case</b></td>
-                <td style="text-align: center; font-weight: 600; color: var(--orange-light);">2</td>
-                <td>Escavadeira Hidráulica XC220 de grande porte</td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- 2. Daf 300 -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <img src="IMAGENS_OTIMIZADAS/VEICULOS/daf.png" alt="Caminhão Daf 300">
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Caminhão Daf 300</span>
+              <span class="fc-badge">2 Unid.</span>
+            </div>
+            <p class="fc-desc">Caminhão prancha pesado de alta capacidade para mobilização e transporte de perfuratrizes.</p>
+          </div>
+        </div>
+
+        <!-- 3. Ford Cargo 815 E -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <img src="IMAGENS_OTIMIZADAS/VEICULOS/cargo.png" alt="Ford Cargo 815 E">
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Ford Cargo 815 E</span>
+              <span class="fc-badge">1 Unid.</span>
+            </div>
+            <p class="fc-desc">Equipado com guindaste hidráulico (Munck), cabine auxiliar e carroceria.</p>
+          </div>
+        </div>
+
+        <!-- 4. Retroescavadeira JCB -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <img src="IMAGENS_OTIMIZADAS/VEICULOS/retro_jcb.png" alt="Retroescavadeira JCB">
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Retroescavadeira JCB</span>
+              <span class="fc-badge">2 Unid.</span>
+            </div>
+            <p class="fc-desc">Utilizada para escavação direta, abertura de valas e recomposição de pavimentos.</p>
+          </div>
+        </div>
+
+        <!-- 5. Bobcat -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <img src="IMAGENS_OTIMIZADAS/VEICULOS/bobcat.png" alt="Mini-escavadeira Bobcat">
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Mini-escavadeira Bobcat</span>
+              <span class="fc-badge">3 Unid.</span>
+            </div>
+            <p class="fc-desc">Agilidade extrema para abertura de valas em calçadas e espaços urbanos reduzidos.</p>
+          </div>
+        </div>
+
+        <!-- 6. Volvo 270 -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <img src="IMAGENS_OTIMIZADAS/VEICULOS/volvo.png" alt="Caminhão Volvo 270">
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Caminhão Volvo 270</span>
+              <span class="fc-badge">1 Unid.</span>
+            </div>
+            <p class="fc-desc">Caminhão prancha operacional para transporte rápido de equipamentos.</p>
+          </div>
+        </div>
+
+        <!-- 7. Chevrolet S10 / Strada -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <img src="IMAGENS_OTIMIZADAS/VEICULOS/s10.png" alt="Pick-up S10">
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">S10 / Strada Flex</span>
+              <span class="fc-badge">4 Unid.</span>
+            </div>
+            <p class="fc-desc">Veículos de apoio técnico equipados com porta-escadas e ferramentas de campo.</p>
+          </div>
+        </div>
+
+        <!-- 8. Fiat Uno Vivace -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <img src="IMAGENS_OTIMIZADAS/VEICULOS/uno.png" alt="Fiat Uno Vivace">
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Fiat Uno Vivace</span>
+              <span class="fc-badge">6 Unid.</span>
+            </div>
+            <p class="fc-desc">Veículos destinados a equipes de Segurança do Trabalho e Fiscalização.</p>
+          </div>
+        </div>
+
+        <!-- 9. Fiat Mobi -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <img src="IMAGENS_OTIMIZADAS/VEICULOS/mobis.png" alt="Fiat Mobi">
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Fiat Mobi</span>
+              <span class="fc-badge">2 Unid.</span>
+            </div>
+            <p class="fc-desc">Dedicados à Coordenação e supervisão técnica em trânsito urbano.</p>
+          </div>
+        </div>
+
+        <!-- 10. Mercedes-Benz / Volks -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <img src="IMAGENS_OTIMIZADAS/VEICULOS/mercedez.png" alt="Caminhão Mercedes-Benz">
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Volks / Mercedes-Benz</span>
+              <span class="fc-badge">3 Unid.</span>
+            </div>
+            <p class="fc-desc">Caminhões operacionais adaptados com porta-escadas para serviços aéreos.</p>
+          </div>
+        </div>
+
+        <!-- 11. Perfuratriz Vermeer -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <div class="fc-icon-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Perfuratriz Vermeer</span>
+              <span class="fc-badge">3 Unid.</span>
+            </div>
+            <p class="fc-desc">Equipamento para perfuração direcional (MND) em solos com maior resistência.</p>
+          </div>
+        </div>
+
+        <!-- 12. Caçamba Basculante -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <div class="fc-icon-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Caçamba Basculante</span>
+              <span class="fc-badge">3 Unid.</span>
+            </div>
+            <p class="fc-desc">Caminhão basculante para transporte e remoção de entulhos de obras civis.</p>
+          </div>
+        </div>
+
+        <!-- 13. Trator de Esteira XCMG -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <div class="fc-icon-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18v8H3zM6 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm12 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM14 6v4M10 4v6"/></svg></div>
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Trator de Esteira XCMG</span>
+              <span class="fc-badge">2 Unid.</span>
+            </div>
+            <p class="fc-desc">Maquinário pesado voltado para movimentação de terras e terraplanagem.</p>
+          </div>
+        </div>
+
+        <!-- 14. Escavadeira Case XC220 -->
+        <div class="fleet-card">
+          <div class="fc-img">
+            <div class="fc-icon-fallback"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18v8H3zM6 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm12 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM14 6v4M10 4v6"/></svg></div>
+          </div>
+          <div class="fc-info">
+            <div class="fc-header">
+              <span class="fc-title">Escavadeira XC220</span>
+              <span class="fc-badge">2 Unid.</span>
+            </div>
+            <p class="fc-desc">Escavadeira hidráulica de grande porte para alta performance em abertura de valas.</p>
+          </div>
         </div>
       </div>
     </div>
