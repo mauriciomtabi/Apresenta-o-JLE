@@ -689,7 +689,44 @@
     #contato .foot-info-grid{grid-template-columns:1fr;gap:40px;text-align:center;}
   }
   @media(max-width:900px){#contato .foot-grid{grid-template-columns:1fr 1fr;}}
-</style>
+
+  /* ===== SOBRE 3-PHOTO GALLERY ===== */
+  #sobre .sobre-gallery{
+    display:flex;
+    gap:12px;
+    align-items:stretch;
+    height:340px;
+    min-width:0;
+  }
+  #sobre .sobre-gallery .sg-main{
+    width:55%;
+    object-fit:cover;
+    border-radius:14px;
+    box-shadow:0 16px 40px -12px rgba(0,0,0,0.18);
+    flex-shrink:0;
+  }
+  #sobre .sobre-gallery .sg-side{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    flex:1;
+    min-width:0;
+  }
+  #sobre .sobre-gallery .sg-small{
+    flex:1;
+    width:100%;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 12px 30px -10px rgba(0,0,0,0.15);
+    min-height:0;
+  }
+  @media(max-width:860px){
+    #sobre .sobre-gallery{height:auto;flex-direction:column;}
+    #sobre .sobre-gallery .sg-main{width:100%;height:220px;}
+    #sobre .sobre-gallery .sg-side{flex-direction:row;}
+    #sobre .sobre-gallery .sg-small{height:160px;}
+  }
+  </style>
 </head>
 <body>
 
@@ -736,8 +773,15 @@
           <div class="chip">O&M DE REDE</div>
         </div>
       </div>
-      <div class="img-stack tilt-card rv rv2">
-        <img src="IMAGENS_OTIMIZADAS/BASE RS/WhatsApp Image 2025-08-27 at 13.51.15 (1).jpeg" alt="Equipe JLE Telecom em campo">
+      <div class="sobre-gallery rv rv2">
+        <img src="IMAGENS_OTIMIZADAS/BASE RS/WhatsApp Image 2025-08-27 at 13.51.15 (1).jpeg"
+             alt="Escritório JLE Telecom" class="sg-main">
+        <div class="sg-side">
+          <img src="IMAGENS_OTIMIZADAS/SOBRE/projeto_mapa_rede.jpg"
+               alt="Projeto de rede óptica JLE" class="sg-small">
+          <img src="IMAGENS_OTIMIZADAS/SOBRE/maquina_hdd_rodovia.jpg"
+               alt="Máquina HDD JLE em operação" class="sg-small">
+        </div>
       </div>
     </div>
   </div>
