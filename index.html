@@ -792,6 +792,214 @@
     #sobre .sobre-gallery .sg-row{flex-direction:column;gap:8px;}
     #sobre .sobre-gallery .sg-cell{width:100%;height:200px;}
   }
+
+  /* ===== EDITOR GENERAL & UI STYLES ===== */
+  body.jle-editor-active [contenteditable="true"] {
+    outline: 2px dashed var(--orange) !important;
+    outline-offset: 4px;
+    background: rgba(242, 153, 74, 0.05) !important;
+    transition: background 0.2s ease, outline 0.2s ease;
+  }
+  body.jle-editor-active [contenteditable="true"]:focus {
+    outline: 2px solid var(--orange) !important;
+    background: rgba(242, 153, 74, 0.1) !important;
+  }
+  body.jle-editor-active img {
+    cursor: pointer !important;
+    transition: filter 0.2s ease, outline 0.2s ease;
+  }
+  body.jle-editor-active img:hover {
+    filter: brightness(0.7) contrast(1.1) !important;
+    outline: 3px dashed var(--orange) !important;
+    outline-offset: -3px;
+  }
+
+  /* Admin password modal */
+  #admin-pwd-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 12, 20, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: var(--sans);
+  }
+  #admin-pwd-modal .modal-box {
+    background: var(--navy-deep);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 36px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  #admin-pwd-modal h4 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 12px;
+    font-weight: 600;
+    margin-top: 0;
+  }
+  #admin-pwd-modal p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  #admin-pwd-modal input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 12px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease;
+  }
+  #admin-pwd-modal input:focus {
+    border-color: var(--orange);
+  }
+  #admin-pwd-modal .err-msg {
+    color: #ff4d4d;
+    font-size: 13.5px;
+    margin-bottom: 16px;
+    display: none;
+    font-weight: 500;
+  }
+  #admin-pwd-modal .btns {
+    display: flex;
+    gap: 12px;
+  }
+  #admin-pwd-modal button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  #admin-pwd-modal button.btn-primary {
+    background: var(--orange);
+    color: var(--navy-deep);
+  }
+  #admin-pwd-modal button.btn-primary:hover {
+    background: var(--orange-light);
+    transform: translateY(-1px);
+  }
+  #admin-pwd-modal button.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+  #admin-pwd-modal button.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+  }
+
+  /* Admin control bar */
+  #admin-ctrl-bar {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: rgba(8, 28, 46, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--orange);
+    border-radius: 12px;
+    padding: 16px 24px;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--sans);
+    animation: slideInUp 0.3s ease;
+  }
+  @keyframes slideInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  #admin-ctrl-bar .status {
+    color: #fff;
+    font-size: 13.5px;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  #admin-ctrl-bar .status::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: #00e676;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #00e676;
+  }
+  #admin-ctrl-bar button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  #admin-ctrl-bar button.btn-save {
+    background: var(--orange);
+    color: var(--navy-deep);
+  }
+  #admin-ctrl-bar button.btn-save:hover {
+    background: var(--orange-light);
+    transform: translateY(-1px);
+  }
+  #admin-ctrl-bar button.btn-exit {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    margin-left: 8px;
+  }
+  #admin-ctrl-bar button.btn-exit:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+  }
+
+  /* Admin Notification Toast */
+  #admin-toast {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: var(--navy-deep);
+    border: 1px solid var(--orange);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    z-index: 10001;
+    font-family: var(--mono);
+    font-size: 13px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+  }
+  #admin-toast.show {
+    transform: translateX(-50%) translateY(0);
+  }
+
   </style>
 </head>
 <body>
@@ -1487,5 +1695,287 @@
   updateActiveSection();
 })();
 </script>
+
+<!-- ========================================== -->
+<!-- VISUAL EDITOR MODULE                       -->
+<!-- ========================================== -->
+<input type="file" id="admin-file-picker" accept="image/*" style="display:none;">
+
+<div id="admin-pwd-modal" style="display:none;">
+  <div class="modal-box">
+    <h4>Painel JLE Telecom</h4>
+    <p>Insira a senha de acesso administrativo para habilitar a edição visual:</p>
+    <input type="password" id="admin-pwd-input" placeholder="Senha de Acesso">
+    <div class="err-msg" id="admin-pwd-error">Senha incorreta! Tente novamente.</div>
+    <div class="btns">
+      <button id="admin-pwd-btn" class="btn-primary">Acessar</button>
+      <button id="admin-pwd-cancel" class="btn-secondary">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<div id="admin-ctrl-bar" style="display:none;">
+  <div class="bar-content" style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:20px;">
+    <div class="status">Modo Edição Ativo</div>
+    <div style="display:flex;align-items:center;">
+      <button id="admin-save-btn" class="btn-save">Salvar e Baixar index.html</button>
+      <button id="admin-exit-btn" class="btn-exit">Sair</button>
+    </div>
+  </div>
+</div>
+
+<div id="admin-toast">Alteração salva com sucesso!</div>
+
+<script>
+(function() {
+  const SECRET_PASS = "Jle@2026";
+  const filePicker = document.getElementById('admin-file-picker');
+  const pwdModal = document.getElementById('admin-pwd-modal');
+  const pwdInput = document.getElementById('admin-pwd-input');
+  const pwdBtn = document.getElementById('admin-pwd-btn');
+  const pwdCancel = document.getElementById('admin-pwd-cancel');
+  const pwdError = document.getElementById('admin-pwd-error');
+  const ctrlBar = document.getElementById('admin-ctrl-bar');
+  const saveBtn = document.getElementById('admin-save-btn');
+  const exitBtn = document.getElementById('admin-exit-btn');
+  const toast = document.getElementById('admin-toast');
+
+  let activeImgElement = null;
+
+  function showToast(text, duration = 3000) {
+    toast.textContent = text;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, duration);
+  }
+
+  // Check trigger
+  function checkTrigger() {
+    if (window.location.hash === '#admin') {
+      showModal();
+    }
+  }
+
+  // Keyboard shortcut Ctrl + Alt + E
+  window.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.altKey && e.key.toLowerCase() === 'e') {
+      e.preventDefault();
+      showModal();
+    }
+  });
+
+  window.addEventListener('hashchange', checkTrigger);
+  // Run check on page load
+  window.addEventListener('DOMContentLoaded', checkTrigger);
+
+  function showModal() {
+    pwdInput.value = "";
+    pwdError.style.display = "none";
+    pwdModal.style.display = "flex";
+    pwdInput.focus();
+  }
+
+  function hideModal() {
+    pwdModal.style.display = "none";
+    if (window.location.hash === '#admin') {
+      // Remove hash without reloading
+      history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+  }
+
+  // Validate passcode
+  function handleLogin() {
+    if (pwdInput.value === SECRET_PASS) {
+      hideModal();
+      startEditorMode();
+    } else {
+      pwdError.style.display = "block";
+      pwdInput.select();
+    }
+  }
+
+  pwdBtn.addEventListener('click', handleLogin);
+  pwdInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') handleLogin();
+  });
+  pwdCancel.addEventListener('click', hideModal);
+
+  // START EDITOR MODE
+  function startEditorMode() {
+    document.body.classList.add('jle-editor-active');
+    ctrlBar.style.display = "flex";
+    showToast("Modo editor ativado! Clique nas fotos ou textos para editar.");
+
+    // Query and make all text elements contenteditable
+    const selectors = [
+      '#hero h1', '#hero p', '#sobre h2', '#sobre p', '#sobre .chip', '#sobre .ck',
+      '#stats h2', '#stats .num', '#stats .lbl', '#ciclo h2', '#ciclo p', '.flow-card p',
+      '.sec-head h2', '.sec-head p', '.panel-copy h3', '.panel-copy p', '.panel-copy .st b', '.panel-copy .st span',
+      '.case-card h4', '.metrics .m b', '.metrics .m span', '#contato h2', '#contato h5', '#contato p', '#contato a',
+      '.bottom-bar span'
+    ];
+
+    document.querySelectorAll(selectors.join(', ')).forEach(el => {
+      // Exclude leaflet map containers and scripts/styles
+      if (!el.closest('.leaflet-container') && !el.closest('#admin-pwd-modal') && !el.closest('#admin-ctrl-bar')) {
+        el.setAttribute('contenteditable', 'true');
+      }
+    });
+
+    // Handle clicks on image elements to upload new photo
+    document.addEventListener('click', handleImageClick, true);
+  }
+
+  function handleImageClick(e) {
+    if (!document.body.classList.contains('jle-editor-active')) return;
+    
+    const target = e.target;
+    if (target.tagName === 'IMG') {
+      // Exclude admin bar / modal logos and leaflet
+      if (target.closest('#admin-pwd-modal') || target.closest('#admin-ctrl-bar') || target.closest('.leaflet-container')) {
+        return;
+      }
+      e.preventDefault();
+      e.stopPropagation();
+      
+      activeImgElement = target;
+      filePicker.click();
+    }
+  }
+
+  // Handle selected image file, compress on the fly using Canvas to keep HTML small!
+  filePicker.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file || !activeImgElement) return;
+
+    showToast("Redimensionando e compactando imagem...");
+
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      const img = new Image();
+      img.onload = function() {
+        // Target max dimension of 1200px to balance quality and file size
+        const MAX_DIM = 1200;
+        let width = img.width;
+        let height = img.height;
+
+        if (width > height) {
+          if (width > MAX_DIM) {
+            height = Math.round((height * MAX_DIM) / width);
+            width = MAX_DIM;
+          }
+        } else {
+          if (height > MAX_DIM) {
+            width = Math.round((width * MAX_DIM) / height);
+            height = MAX_DIM;
+          }
+        }
+
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+
+        // Compress as JPEG at 80% quality
+        const compressedBase64 = canvas.toDataURL('image/jpeg', 0.80);
+        
+        activeImgElement.src = compressedBase64;
+        showToast("Imagem atualizada com sucesso!");
+        filePicker.value = ""; // Clear file picker
+      };
+      img.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // EXIT EDITOR MODE
+  function stopEditorMode() {
+    document.body.classList.remove('jle-editor-active');
+    ctrlBar.style.display = "none";
+    document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+      el.removeAttribute('contenteditable');
+    });
+    document.removeEventListener('click', handleImageClick, true);
+    showToast("Modo editor encerrado.");
+  }
+
+  exitBtn.addEventListener('click', stopEditorMode);
+
+  // SAVE AND EXPORT index.html (CLEANUP STATE FIRST)
+  saveBtn.addEventListener('click', () => {
+    showToast("Preparando arquivo limpo para download...");
+
+    // 1. Temporarily exit editing mode to clean contenteditable styles
+    document.body.classList.remove('jle-editor-active');
+    ctrlBar.style.display = "none";
+    document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+      el.removeAttribute('contenteditable');
+    });
+    document.removeEventListener('click', handleImageClick, true);
+
+    // 2. Cleanup dynamic content applied at runtime
+    // Leaflet map container contents must be empty so it rebuilds on load
+    const realMap = document.getElementById('realMap');
+    let mapBackup = "";
+    if (realMap) {
+      mapBackup = realMap.innerHTML;
+      realMap.innerHTML = "";
+    }
+
+    // Remove animation show class from reveal elements
+    const revealElements = document.querySelectorAll('.rv');
+    revealElements.forEach(el => el.classList.remove('show'));
+
+    // Remove drawing class from ciclo svg connector
+    const flowLine = document.getElementById('flowLine');
+    if (flowLine) flowLine.classList.remove('draw');
+
+    // Make sure inner global bar has hidden opacity
+    const innerBar = document.getElementById('global-section-bar-inner');
+    if (innerBar) innerBar.classList.remove('visible');
+    const globBar = document.getElementById('global-section-bar');
+    if (globBar) globBar.style.display = "none";
+
+    // 3. Clone document and get outerHTML
+    const cleanHTML = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+
+    // 4. Restore editor state immediately so user is not interrupted
+    document.body.classList.add('jle-editor-active');
+    ctrlBar.style.display = "flex";
+    document.querySelectorAll(
+      ['#hero h1', '#hero p', '#sobre h2', '#sobre p', '#sobre .chip', '#sobre .ck',
+       '#stats h2', '#stats .num', '#stats .lbl', '#ciclo h2', '#ciclo p', '.flow-card p',
+       '.sec-head h2', '.sec-head p', '.panel-copy h3', '.panel-copy p', '.panel-copy .st b', '.panel-copy .st span',
+       '.case-card h4', '.metrics .m b', '.metrics .m span', '#contato h2', '#contato h5', '#contato p', '#contato a',
+       '.bottom-bar span'].join(', ')
+    ).forEach(el => {
+      if (!el.closest('.leaflet-container') && !el.closest('#admin-pwd-modal') && !el.closest('#admin-ctrl-bar')) {
+        el.setAttribute('contenteditable', 'true');
+      }
+    });
+    document.addEventListener('click', handleImageClick, true);
+
+    if (realMap) {
+      realMap.innerHTML = mapBackup;
+    }
+
+    // 5. Trigger download of index.html
+    const blob = new Blob([cleanHTML], { type: "text/html;charset=utf-8" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "index.html";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    showToast("Download do index.html iniciado! Cole-o em sua pasta de trabalho.");
+  });
+
+})();
+</script>
+
 </body>
 </html>
