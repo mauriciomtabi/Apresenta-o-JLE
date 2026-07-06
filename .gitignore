@@ -1,0 +1,21 @@
+# GitIgnore for JLE Presentation
+# Exclude original heavy asset source directories
+1760400973862.jpg
+BASE PR/
+BASE RS/
+BASE SC/
+CANALIZAÇÃO/
+EQUIPAMENTOS/
+FROTA/
+LOGOS CLIENTES/
+LOGOS JLE/
+download*.jpg
+download.jpg
+original_hero.jpg
+JLE Telecom - Apresentacao (5)_ORIGINAL.html
+
+# Include only optimized folders and compiled production files
+!IMAGENS_OTIMIZADAS/
+!index.html
+!favicon.png
+!galeria_fotos.html
