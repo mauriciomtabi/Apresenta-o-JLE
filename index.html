@@ -1733,7 +1733,112 @@
       padding: 80px 0;
     }
   }
-  </style>
+  
+  /* ===== CABO MALBEC ===== */
+  #malbec {
+    background: var(--navy-deep);
+    padding: 110px 0 100px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+  }
+  #malbec .layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  #malbec .photo-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+    position: relative;
+    aspect-ratio: 16/10;
+  }
+  #malbec .photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  #malbec .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .08em;
+    color: var(--orange);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  #malbec h2 {
+    font-size: clamp(30px, 3.6vw, 44px);
+    color: #fff;
+    margin-bottom: 24px;
+    line-height: 1.15;
+    font-family: var(--disp);
+  }
+  #malbec p.intro {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 32px;
+  }
+  #malbec .impl-title {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .04em;
+    color: var(--orange-light);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  #malbec .impl-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #malbec .impl-item {
+    display: flex;
+    gap: 16px;
+  }
+  #malbec .impl-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(242,153,74,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
+    margin-top: 2px;
+  }
+  #malbec .impl-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+  #malbec .impl-text h4 {
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  #malbec .impl-text p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.65);
+  }
+  @media(max-width: 900px) {
+    #malbec .layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    #malbec .photo-container {
+      aspect-ratio: 16/9;
+      order: -1;
+    }
+  }
+
+</style>
 </head>
 <body>
 <div id="global-section-bar">
@@ -2172,7 +2277,65 @@
       
     </div>
   </div>
-</section>
+</section>
+
+<section id="malbec" data-theme="dark">
+  <div class="wrap">
+    <div class="layout">
+      
+      <!-- Diver Photo -->
+      <div class="photo-container rv">
+        <img src="IMAGENS_OTIMIZADAS/cabo_malbec.png" alt="Mergulhador realizando a instalação/manutenção do cabo submarino Malbec no leito oceânico">
+      </div>
+      
+      <!-- Text details -->
+      <div class="text-container rv">
+        <div class="eyebrow">Conexão Internacional</div>
+        <h2>Extensão do Cabo Submarino Malbec</h2>
+        <p class="intro">
+          Em parceria com a <b>Meta</b>, iniciamos a construção do primeiro cabo submarino na cidade de Porto Alegre — uma extensão do cabo Malbec, que conecta as principais capitais do Brasil e da Argentina. Esta <i>branch unit</i> de 280 km, com previsão de lançamento para 2027, conectará Porto Alegre ao backbone de alta capacidade da V.tal, ampliando drasticamente a velocidade e qualidade da transmissão de dados na região.
+        </p>
+        
+        <div class="impl-title">Implementação e Tecnologia</div>
+        <div class="impl-list">
+          
+          <div class="impl-item">
+            <div class="impl-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="impl-text">
+              <h4>Estação de Ancoragem</h4>
+              <p>Instalação da estação de ancoragem em Balneário Pinhal (105 km de Porto Alegre).</p>
+            </div>
+          </div>
+
+          <div class="impl-item">
+            <div class="impl-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="impl-text">
+              <h4>Modernização Terrestre</h4>
+              <p>Modernização e enterramento da infraestrutura terrestre para garantir maior stabile e segurança na conexão.</p>
+            </div>
+          </div>
+
+          <div class="impl-item">
+            <div class="impl-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="impl-text">
+              <h4>Tecnologia Alcatel Submarine</h4>
+              <p>Uso da mais avançada tecnologia de cabos submarinos e roteadores ópticos pela Alcatel Submarine Networks, com capacidade de até 20Tbps por par de fibra e circuitos de até 800Gbps.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
 
 <section id="clientes" data-theme="light">
   <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Principais clientes</div></div></div>
