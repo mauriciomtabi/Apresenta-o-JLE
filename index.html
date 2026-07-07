@@ -785,6 +785,104 @@
   }
 
   
+  /* ===== PAST ROUTES GRID ===== */
+  #cases .past-routes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 70px;
+  }
+  #cases .route-card {
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--paper);
+    transition: all .3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  #cases .route-card:hover {
+    border-color: var(--orange);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -16px rgba(8,28,46,0.12);
+  }
+  #cases .route-map-wrapper {
+    width: 100%;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    background: var(--navy-deep);
+    border-bottom: 1px solid var(--line);
+  }
+  #cases .route-map-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  #cases .route-card-body {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  #cases .route-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--orange-deep);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  #cases .route-card-body h4 {
+    font-size: 17px;
+    color: var(--navy-deep);
+    margin-bottom: 8px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  #cases .route-desc {
+    font-size: 13.5px;
+    color: var(--slate);
+    margin-bottom: 20px;
+    line-height: 1.45;
+  }
+  #cases .route-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    margin-top: auto;
+  }
+  #cases .route-specs li {
+    font-size: 12.5px;
+    color: var(--slate-dark);
+    line-height: 1.4;
+    position: relative;
+    padding-left: 16px;
+  }
+  #cases .route-specs li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--orange);
+  }
+  @media (max-width: 900px) {
+    #cases .past-routes-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+
+
   #cases .live-photos .lp-video{
     background:linear-gradient(160deg, #163D5C, #081C2E);
     display:flex;align-items:center;justify-content:center;
@@ -2212,17 +2310,89 @@
       <h2 style="color: var(--navy-deep); max-width: 820px; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15;">Projetos que comprovam a capacidade de execução.</h2>
     </div>
 
-    <div class="live-block rv">
-      <div class="live-head">
-        <div>
-          <div class="live-badge"><span class="dot"></span>Em execução agora</div>
-          <div class="live-title">Backbone de fibra óptica em rodovia — Capivari do Sul, RS</div>
-          <div class="live-meta">Cliente: <b>TELEMONT</b> · Rodovia Tapir Rocha / RS-040 · Registro em campo, julho de 2026</div>
-        </div>
-      </div>
-      <div class="live-photos" style="grid-template-columns: 1fr; max-width: 820px; margin: 24px auto 0;">
-<div class="lp-card" style="aspect-ratio: 21/9; overflow: hidden; border-radius: 16px; box-shadow: 0 20px 40px -16px rgba(0,0,0,0.5);"><img src="IMAGENS_OTIMIZADAS/CANALIZAÇÃO/telemont_tapir_rocha.jpg" alt="Máquina de perfuração MND operando na rodovia RS-040 — Capivari do Sul, RS" style="width: 100%; height: 100%; object-fit: cover;"></div>
-</div>
+    <div class="live-block rv">
+      <div class="live-head">
+        <div>
+          <div class="live-badge"><span class="dot"></span>Em execução agora</div>
+          <div class="live-title">OBRA ATUAL – MALBEC/RS</div>
+          <div class="live-meta">Cliente: <b>TELEMONT</b> — Rota Cabo Submarino MALBEC (Rota 03) – Realizado em MND na sua totalidade com um duto de 40″. TOTAL de 91km.</div>
+        </div>
+      </div>
+      <div class="live-photos" style="grid-template-columns: 1fr 1fr; gap: 16px; max-width: 100%; margin: 0;">
+        <!-- Foto de campo -->
+        <div class="lp-card" style="aspect-ratio: 4/3; overflow: hidden; border-radius: 16px; box-shadow: 0 20px 40px -16px rgba(0,0,0,0.15);"><img src="IMAGENS_OTIMIZADAS/CANALIZAÇÃO/telemont_tapir_rocha.jpg" alt="Máquina de perfuração MND operando na rodovia RS-040 — Capivari do Sul, RS" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <!-- Mapa do trecho -->
+        <div class="lp-card" style="aspect-ratio: 4/3; overflow: hidden; border-radius: 16px; box-shadow: 0 20px 40px -16px rgba(0,0,0,0.15);"><img src="IMAGENS_OTIMIZADAS/mapa_malbec.png" alt="Mapa do trecho de 91km do cabo submarino Malbec entre Viamão e Pinhal" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      </div>
+    </div>
+
+    <!-- Subtitle for Completed Routes -->
+    <div class="sec-head rv" style="max-width: 100%; margin-top: 60px; margin-bottom: 32px; border-top: 1px solid var(--line); padding-top: 48px;">
+      <h3 style="font-size: 24px; color: var(--navy-deep); font-family: var(--disp); font-weight: 700;">Trechos Semelhantes Concluídos no RS</h3>
+      <p style="color: var(--slate); font-size: 14.5px; margin-top: 8px;">Conheça outras rotas de alta complexidade executadas pela JLE Telecom com infraestrutura de grande porte e método não destrutivo.</p>
+    </div>
+
+    <!-- 3-Column Grid for Completed Routes -->
+    <div class="past-routes-grid rv">
+      
+      <!-- Card 1: POA x Osório -->
+      <div class="route-card">
+        <div class="route-map-wrapper">
+          <img src="IMAGENS_OTIMIZADAS/mapa_porto_alegre_osorio.jpg" alt="Mapa do trecho Porto Alegre x Osório/RS">
+        </div>
+        <div class="route-card-body">
+          <div class="route-tag">Cliente Claro</div>
+          <h4>Porto Alegre X Osório/RS</h4>
+          <p class="route-desc">Substituição do cabo antigo DS às margens da rodovia BR-290.</p>
+          <ul class="route-specs">
+            <li>Execução de Canalização Método MND <b>87,6 km</b></li>
+            <li>Execução de Canalização Método MD <b>14,2 km</b></li>
+            <li>Execução de lançamento de <b>116,6 km</b> de cabo óptico CFOA DD</li>
+            <li>Execução de <b>3.456</b> fusões em fibras ópticas</li>
+            <li>Instalação de <b>48</b> caixas de emenda óptica</li>
+            <li>Instalação de <b>06</b> DGOs</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2: Pelotas x Rio Grande -->
+      <div class="route-card">
+        <div class="route-map-wrapper">
+          <img src="IMAGENS_OTIMIZADAS/mapa_pelotas_rio_grande.jpg" alt="Mapa do trecho Pelotas x Rio Grande/RS">
+        </div>
+        <div class="route-card-body">
+          <div class="route-tag">Destaque MND</div>
+          <h4>Pelotas X Rio Grande/RS</h4>
+          <p class="route-desc">Infraestrutura subterrânea de alta complexidade interligando polos.</p>
+          <ul class="route-specs">
+            <li>Execução de Canalização Método MND <b>69,4 km</b></li>
+            <li>Execução de Canalização Método MD <b>3,1 km</b></li>
+            <li>Execução de lançamento de <b>81,3 km</b> de cabo óptico CFOA DD</li>
+            <li>Execução de <b>864</b> fusões em fibras ópticas</li>
+            <li>Instalação de <b>24</b> caixas de emenda óptica</li>
+            <li>Instalação de <b>03</b> DGOs</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3: Santa Maria x Pelotas -->
+      <div class="route-card">
+        <div class="route-map-wrapper">
+          <img src="IMAGENS_OTIMIZADAS/mapa_santa_maria_pelotas.jpg" alt="Mapa do trecho Santa Maria x Pelotas/RS">
+        </div>
+        <div class="route-card-body">
+          <div class="route-tag">Longa Distância</div>
+          <h4>Santa Maria X Pelotas/RS</h4>
+          <p class="route-desc">Conexão de grande porte interligando regiões do Estado.</p>
+          <ul class="route-specs">
+            <li>Execução de lançamento de <b>340 km</b> de cabo óptico</li>
+            <li>Execução de <b>4.968</b> fusões em fibras ópticas</li>
+            <li>Instalação de <b>138</b> caixas de emenda óptica</li>
+            <li>Instalação de cordoalhas para acomodação de reservas técnicas e emendas</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
     <div class="case-grid">
       <div class="case-card rv">
