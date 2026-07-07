@@ -2234,17 +2234,18 @@
     }).addTo(map);
 
     const bases = [
-      {name:'São Leopoldo', uf:'RS', tag:'Matriz', lat:-29.7594, lng:-51.1478},
-      {name:'São José', uf:'SC', tag:'Filial 01', lat:-27.5936, lng:-48.6394},
-      {name:'Curitiba', uf:'PR', tag:'Filial 02', lat:-25.4949, lng:-49.2977},
-      {name:'São Paulo', uf:'SP', tag:'Base Operacional', lat:-23.5505, lng:-46.6333},
-      {name:'Rio de Janeiro', uf:'RJ', tag:'Base Operacional', lat:-22.9068, lng:-43.1729},
-      {name:'Brasília', uf:'DF', tag:'Base Operacional', lat:-15.7938, lng:-47.8828},
-      {name:'Salvador', uf:'BA', tag:'Base Operacional', lat:-12.9777, lng:-38.5016},
-      {name:'Fortaleza', uf:'CE', tag:'Base Operacional', lat:-3.7319, lng:-38.5267},
-      {name:'Manaus', uf:'AM', tag:'Base Operacional', lat:-3.1190, lng:-60.0217},
-      {name:'Belém', uf:'PA', tag:'Base Operacional', lat:-1.4558, lng:-48.4902}
-    ];
+{name:'São Leopoldo', uf:'RS', tag:'Matriz', lat:-29.7594, lng:-51.1478},
+{name:'São José', uf:'SC', tag:'Filial 01', lat:-27.5936, lng:-48.6394},
+{name:'Curitiba', uf:'PR', tag:'Filial 02', lat:-25.4949, lng:-49.2977},
+{name:'São Paulo', uf:'SP', tag:'Base Operacional', lat:-23.5505, lng:-46.6333},
+{name:'Rio de Janeiro', uf:'RJ', tag:'Base Operacional', lat:-22.9068, lng:-43.1729},
+{name:'Brasília', uf:'DF', tag:'Base Operacional', lat:-15.7938, lng:-47.8828},
+{name:'Salvador', uf:'BA', tag:'Base Operacional', lat:-12.9777, lng:-38.5016},
+{name:'Fortaleza', uf:'CE', tag:'Base Operacional', lat:-3.7319, lng:-38.5267},
+{name:'Manaus', uf:'AM', tag:'Base Operacional', lat:-3.1190, lng:-60.0217},
+{name:'Belém', uf:'PA', tag:'Base Operacional', lat:-1.4558, lng:-48.4902},
+{name:'São Luís', uf:'MA', tag:'Base Operacional', lat:-2.53073, lng:-44.3068}
+];
 
     const markers = [];
     bases.forEach(b=>{
@@ -2268,7 +2269,7 @@
       .then(data => {
         L.geoJSON(data, {
           style: function(feature) {
-            const activeStates = ['RS', 'SC', 'PR', 'SP', 'RJ', 'DF', 'BA', 'CE', 'AM', 'PA'];
+            const activeStates = ['RS', 'SC', 'PR', 'SP', 'RJ', 'DF', 'BA', 'CE', 'AM', 'PA', 'MA'];
             const uf = feature.properties.sigla;
             if (activeStates.includes(uf)) {
               return {
