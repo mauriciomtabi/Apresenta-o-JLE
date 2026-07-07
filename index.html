@@ -1978,10 +1978,10 @@
   
   .live-premium-card-overlay {
     position: absolute;
-    left: -6%;
+    left: -8%;
     bottom: -20px;
-    width: 40%;
-    aspect-ratio: 4/3;
+    width: 54%;
+    aspect-ratio: 16/9;
     z-index: 3;
     background: rgba(8, 28, 46, 0.85);
     backdrop-filter: blur(12px);
@@ -2587,16 +2587,20 @@
       <div class="live-photos-premium">
         <!-- Card 1: Main Card (Now the Map) -->
         <div class="live-premium-card-main" style="background: #0b1a26;">
-          <span class="live-premium-tech-badge" style="background: var(--navy-deep); border: 1px solid rgba(242,153,74,0.5);">Traçado da Rota</span>
           <img src="IMAGENS_OTIMIZADAS/mapa_malbec.png" alt="Mapa do trecho de 91km do cabo submarino Malbec entre Viamão e Pinhal" style="object-fit: contain;">
           <span class="live-premium-tech-coords" style="background: rgba(242,153,74,0.25); color: #fff; border: 1px solid rgba(242,153,74,0.4);">MND: 91km</span>
         </div>
-        <!-- Card 2: Overlay Card (Now the Field Photo) -->
+        <!-- Card 2: Overlay Card (Now contains two Field Photos side-by-side) -->
         <div class="live-premium-card-overlay">
-          <div class="live-premium-card-overlay-inner">
-            <span class="live-premium-tech-badge">Foto de Campo</span>
-            <img src="IMAGENS_OTIMIZADAS/CANALIZAÇÃO/telemont_tapir_rocha_3.jpg" alt="Máquina de perfuração MND operando na rodovia RS-040 — Capivari do Sul, RS" style="object-fit: cover;">
-            <span class="live-premium-tech-coords">LAT -30.154 | LNG -50.601</span>
+          <div class="live-premium-card-overlay-inner" style="display: flex; gap: 8px; background: none; padding: 2px;">
+            <div style="flex: 1; border-radius: 12px; overflow: hidden; height: 100%; position: relative; border: 1.5px solid rgba(255,255,255,0.15);">
+              <span class="live-premium-tech-badge" style="top: 8px; left: 8px; font-size: 8px; padding: 2px 6px; background: var(--orange-deep);">Foto 01</span>
+              <img src="IMAGENS_OTIMIZADAS/CANALIZAÇÃO/telemont_tapir_rocha_3.jpg" alt="Máquina de perfuração MND" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 1; border-radius: 12px; overflow: hidden; height: 100%; position: relative; border: 1.5px solid rgba(255,255,255,0.15);">
+              <span class="live-premium-tech-badge" style="top: 8px; left: 8px; font-size: 8px; padding: 2px 6px; background: var(--orange-deep);">Foto 02</span>
+              <img src="IMAGENS_OTIMIZADAS/CANALIZAÇÃO/jle_caminhao_escavadeira.jpg" alt="Caminhão e Miniescavadeira JLE" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
           </div>
         </div>
       </div>
@@ -2777,7 +2781,7 @@
           <div class="deck-card-header">
             <span></span><span></span><span></span>
           </div>
-          <img src="IMAGENS_OTIMIZADAS/CANALIZAÇÃO/telemont_tapir_rocha.jpg" alt="Obra em andamento (V.TAL)">
+          <img src="IMAGENS_OTIMIZADAS/CANALIZAÇÃO/telemont_tapir_rocha_4.jpg" alt="Obra em andamento (V.TAL)">
         </div>
         <div class="deck-card deck-card-2">
           <div class="deck-card-header">
