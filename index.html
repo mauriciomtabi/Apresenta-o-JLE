@@ -2847,6 +2847,61 @@
       border-radius: 12px;
     }
   }
+
+/* ===== PRINT AND PDF EXPORT STYLING (Ctrl + P) ===== */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Hide interactive elements, controls, and editor UI */
+  #nav,
+  #global-section-bar,
+  .scrolldown,
+  #admin-ctrl-bar,
+  #admin-pwd-modal,
+  .toast,
+  .leaflet-control-container {
+    display: none !important;
+  }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #040c14 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Force each section to be a separate page (slide) */
+  section {
+    page-break-after: always !important;
+    break-after: page !important;
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 80px 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Specific fit for Hero page */
+  #hero {
+    min-height: 100vh !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    padding-bottom: 80px !important;
+  }
+
+  .wrap {
+    max-width: 1180px !important;
+    width: 100% !important;
+    padding: 0 48px !important;
+    margin: 0 auto !important;
+  }
+}
 </style>
 
 </head>
