@@ -1186,103 +1186,7 @@
   }
 
 
-  /* ===== COMPACT COLLAGE + TABLE FLEET LAYOUT ===== */
-  .fleet-split-layout {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 48px;
-    align-items: start;
-    margin-top: 36px;
-  }
-  .fleet-collage-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .fleet-collage-item {
-    border-radius: 14px;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-  }
-  .fleet-collage-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .fleet-collage-item:hover {
-    transform: scale(1.03);
-    border-color: var(--orange);
-  }
-  .fleet-table-container {
-    background: rgba(10, 35, 56, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 16px;
-    backdrop-filter: blur(10px);
-    overflow-x: auto;
-    max-height: 520px;
-    overflow-y: auto;
-  }
-  .fleet-compact-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--sans);
-    font-size: 12.5px;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  .fleet-compact-table th {
-    background: rgba(8, 28, 46, 0.85);
-    color: #fff;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.05em;
-    padding: 10px 12px;
-    border-bottom: 2px solid var(--orange);
-    position: sticky;
-    top: 0;
-    z-index: 2;
-  }
-  .fleet-compact-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    vertical-align: middle;
-  }
-  .fleet-compact-table tr {
-    transition: background 0.15s ease;
-  }
-  .fleet-compact-table tr:hover {
-    background: rgba(242, 153, 74, 0.04);
-  }
-  .fleet-compact-table td b {
-    color: #fff;
-    font-weight: 600;
-  }
-  .fleet-compact-table td .unit-badge {
-    background: rgba(242, 153, 74, 0.10);
-    border: 1px solid rgba(242, 153, 74, 0.20);
-    color: var(--orange-light);
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 600;
-    padding: 1px 6px;
-    border-radius: 8px;
-    display: inline-block;
-  }
-  @media(max-width: 900px) {
-    .fleet-split-layout {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-    .fleet-table-container {
-      max-height: none;
-    }
-  }
+  
   @media(max-width: 820px) {
     .fleet-grid {
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -1609,6 +1513,111 @@
     }
   }
 
+/* ===== 3-COLUMN SIDE-BY-SIDE FLEET SHOWCASE ===== */
+  #frota {
+    padding: 120px 0;
+    background: var(--navy-deep);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+  }
+  .fleet-columns-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 40px;
+    align-items: start;
+  }
+  .fleet-col-card {
+    background: rgba(10, 35, 56, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .fleet-col-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+  }
+  .fleet-col-img {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .fleet-col-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .fleet-col-card h4 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--disp);
+    margin-top: 0;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--orange);
+    padding-bottom: 8px;
+    display: inline-block;
+  }
+  .fleet-col-table-container {
+    overflow-x: auto;
+  }
+  .fleet-col-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: var(--sans);
+  }
+  .fleet-col-table th {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    text-align: left;
+  }
+  .fleet-col-table td {
+    padding: 9px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .fleet-col-table tr:last-child td {
+    border-bottom: none;
+  }
+  .fleet-col-table tr {
+    transition: background 0.15s ease;
+  }
+  .fleet-col-table tr:hover {
+    background: rgba(242, 153, 74, 0.04);
+  }
+  .fleet-col-table td .unit-badge {
+    background: rgba(242, 153, 74, 0.10);
+    border: 1px solid rgba(242, 153, 74, 0.20);
+    color: var(--orange-light);
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  @media(max-width: 950px) {
+    .fleet-columns-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    #frota {
+      padding: 80px 0;
+    }
+  }
   </style>
 </head>
 <body>
@@ -1721,209 +1730,99 @@
    
                       </div>
 </section>
+
+
 <section id="frota" data-theme="dark">
   <div class="wrap">
-    <div class="sec-head rv">
+    <div class="sec-head rv" style="margin-bottom: 40px;">
       <h3 style="font-size: clamp(28px, 4vw, 36px); color: #fff; margin-bottom: 12px; font-family: var(--disp); font-weight: 700; letter-spacing: -0.02em;">Frota & Equipamentos Especiais</h3>
       <p style="color: rgba(255,255,255,0.6); font-size: 15px; max-width: 700px; line-height: 1.6;">Estrutura moderna e maquinário próprio com alta capacidade operacional para execução imediata de obras de grande porte em todo o território nacional.</p>
     </div>
 
-    <!-- Category selector tabs -->
-    <div class="fleet-tabs rv rv2">
-      <button class="fleet-tabbtn active" data-tab="maquinario">Maquinário & MND</button>
-      <button class="fleet-tabbtn" data-tab="caminhao">Caminhões & Pranchas</button>
-      <button class="fleet-tabbtn" data-tab="leve">Veículos Leves & Apoio</button>
-    </div>
-
-    <div class="fleet-showcase">
-      <!-- Left side: Showroom Photos -->
-      <div class="showcase-photos-panel rv">
-        <!-- 1. Maquinário Slide -->
-        <div class="showcase-photo-slide active" data-slide="maquinario">
-          <div class="slide-half-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/fleet_collage_1.jpg" alt="Volvo carregando perfuratriz">
-          </div>
-          <div class="slide-half-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/fleet_collage_2.jpg" alt="Daff carregando perfuratriz">
-          </div>
+    <div class="fleet-columns-grid">
+      <!-- Column 1: Maquinário & MND -->
+      <div class="fleet-col-card rv">
+        <div class="fleet-col-img">
+          <img src="IMAGENS_OTIMIZADAS/VEICULOS/fleet_collage_1.jpg" alt="Maquinário & MND JLE">
         </div>
-        <!-- 2. Caminhões Slide -->
-        <div class="showcase-photo-slide" data-slide="caminhao">
-          <div class="slide-half-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/fleet_collage_1.jpg" alt="Volvo carregando perfuratriz">
-          </div>
-          <div class="slide-half-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/fleet_collage_2.jpg" alt="Daff carregando perfuratriz">
-          </div>
-        </div>
-        <!-- 3. Leves Slide -->
-        <div class="showcase-photo-slide" data-slide="leve">
-          <div class="slide-half-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/fleet_collage_3.jpg" alt="Fiorinos operacionais JLE">
-          </div>
-          <div class="slide-half-img">
-            <img src="IMAGENS_OTIMIZADAS/VEICULOS/fleet_collage_4.jpg" alt="Fiat Mobi de coordenação">
-          </div>
+        <h4>Maquinário & MND</h4>
+        <div class="fleet-col-table-container">
+          <table class="fleet-col-table">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th style="text-align: center; width: 50px;">Qtd</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>XCMG 230E (Perfuratriz)</td><td style="text-align: center;"><span class="unit-badge">2</span></td></tr>
+              <tr><td>XCMG 360E (Perfuratriz)</td><td style="text-align: center;"><span class="unit-badge">2</span></td></tr>
+              <tr><td>Vermeer (Máquina Flex)</td><td style="text-align: center;"><span class="unit-badge">1</span></td></tr>
+              <tr><td>JCB (Retroescavadeira)</td><td style="text-align: center;"><span class="unit-badge">2</span></td></tr>
+              <tr><td>Bobcat (Mini-escavadeira)</td><td style="text-align: center;"><span class="unit-badge">3</span></td></tr>
+              <tr><td>XCMG (Trator Esteira)</td><td style="text-align: center;"><span class="unit-badge">1</span></td></tr>
+              <tr><td>Case (Escavadeira XC220)</td><td style="text-align: center;"><span class="unit-badge">2</span></td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <!-- Right side: Specification Sheets list -->
-      <div class="fleet-spec-list rv rv2">
-        <!-- Maquinário items -->
-        <div class="fleet-spec-row active" data-category="maquinario">
-          <div class="spec-row-header"><span class="spec-row-name">XCMG 230E</span><span class="spec-row-badge">2 Unid.</span></div>
-          <div class="spec-row-desc">Perfuratriz Direcional voltada para obras de MND (Método Não Destrutivo).</div>
+      <!-- Column 2: Caminhões & Pranchas -->
+      <div class="fleet-col-card rv rv2">
+        <div class="fleet-col-img">
+          <img src="IMAGENS_OTIMIZADAS/VEICULOS/fleet_collage_2.jpg" alt="Caminhões & Pranchas JLE">
         </div>
-        <div class="fleet-spec-row active" data-category="maquinario">
-          <div class="spec-row-header"><span class="spec-row-name">XCMG 360E</span><span class="spec-row-badge">2 Unid.</span></div>
-          <div class="spec-row-desc">Perfuratriz Direcional pesada para perfurações de grande complexidade.</div>
-        </div>
-        <div class="fleet-spec-row active" data-category="maquinario">
-          <div class="spec-row-header"><span class="spec-row-name">Vermeer</span><span class="spec-row-badge">1 Unid.</span></div>
-          <div class="spec-row-desc">Máquina Flex para perfuração direcional em solos diversos.</div>
-        </div>
-        <div class="fleet-spec-row active" data-category="maquinario">
-          <div class="spec-row-header"><span class="spec-row-name">JCB</span><span class="spec-row-badge">2 Unid.</span></div>
-          <div class="spec-row-desc">Retroescavadeira robusta para escavações e recomposição de vias.</div>
-        </div>
-        <div class="fleet-spec-row active" data-category="maquinario">
-          <div class="spec-row-header"><span class="spec-row-name">Bobcat</span><span class="spec-row-badge">3 Unid.</span></div>
-          <div class="spec-row-desc">Mini-escavadeira para obras em calçadas e espaços urbanos restritos.</div>
-        </div>
-        <div class="fleet-spec-row active" data-category="maquinario">
-          <div class="spec-row-header"><span class="spec-row-name">XCMG Trator</span><span class="spec-row-badge">1 Unid.</span></div>
-          <div class="spec-row-desc">Trator de Esteira de alta performance voltado para terraplanagem.</div>
-        </div>
-        <div class="fleet-spec-row active" data-category="maquinario">
-          <div class="spec-row-header"><span class="spec-row-name">Case Escavadeira</span><span class="spec-row-badge">2 Unid.</span></div>
-          <div class="spec-row-desc">Escavadeira Hidráulica XC220 para alta capacidade em valas profundas.</div>
-        </div>
-
-        <!-- Caminhões items -->
-        <div class="fleet-spec-row" data-category="caminhao">
-          <div class="spec-row-header"><span class="spec-row-name">Ford / Caminhão Cargo 815 E</span><span class="spec-row-badge">1 Unid.</span></div>
-          <div class="spec-row-desc">Equipado com Guindaste Hidráulico (Munck), cabine auxiliar e carroceria.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="caminhao">
-          <div class="spec-row-header"><span class="spec-row-name">Volks / Caminhão 8.150</span><span class="spec-row-badge">3 Unid.</span></div>
-          <div class="spec-row-desc">Caminhão adaptado com porta escadas para implantação aérea de rede.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="caminhao">
-          <div class="spec-row-header"><span class="spec-row-name">Ford F12000</span><span class="spec-row-badge">2 Unid.</span></div>
-          <div class="spec-row-desc">Caminhão de médio porte equipado com porta escadas, adaptado.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="caminhao">
-          <div class="spec-row-header"><span class="spec-row-name">Mercedes-Benz</span><span class="spec-row-badge">3 Unid.</span></div>
-          <div class="spec-row-desc">Caminhão operacional equipado com carroceria e Guindauto.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="caminhao">
-          <div class="spec-row-header"><span class="spec-row-name">Ford Cargo</span><span class="spec-row-badge">2 Unid.</span></div>
-          <div class="spec-row-desc">Caminhão caçamba basculante para transporte e descarte de materiais civis.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="caminhao">
-          <div class="spec-row-header"><span class="spec-row-name">Volks / Caminhão 8.150 Caçamba</span><span class="spec-row-badge">3 Unid.</span></div>
-          <div class="spec-row-desc">Caminhão leve operacional equipado com Caçamba Basculante.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="caminhao">
-          <div class="spec-row-header"><span class="spec-row-name">Daff 300</span><span class="spec-row-badge">2 Unid.</span></div>
-          <div class="spec-row-desc">Caminhão Prancha pesado de alta capacidade para logística de maquinário.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="caminhao">
-          <div class="spec-row-header"><span class="spec-row-name">Volvo 270</span><span class="spec-row-badge">1 Unid.</span></div>
-          <div class="spec-row-desc">Caminhão Prancha para mobilização rápida de perfuratrizes e escavadeiras.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="caminhao">
-          <div class="spec-row-header"><span class="spec-row-name">Ford Cargo 2220</span><span class="spec-row-badge">1 Unid.</span></div>
-          <div class="spec-row-desc">Caminhão Prancha de suporte logístico operacional.</div>
-        </div>
-
-        <!-- Veículos Leves items -->
-        <div class="fleet-spec-row" data-category="leve">
-          <div class="spec-row-header"><span class="spec-row-name">Fiat / Uno VIVACE</span><span class="spec-row-badge">2 Unid.</span></div>
-          <div class="spec-row-desc">Veículo de suporte técnico dedicado à Segurança do Trabalho.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="leve">
-          <div class="spec-row-header"><span class="spec-row-name">Fiat / Uno Vivace 1.0</span><span class="spec-row-badge">7 Unid.</span></div>
-          <div class="spec-row-desc">Veículos leves dedicados à Supervisão e Fiscalização das frentes de obra.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="leve">
-          <div class="spec-row-header"><span class="spec-row-name">Fiat / Mobi</span><span class="spec-row-badge">8 Unid.</span></div>
-          <div class="spec-row-desc">Veículos de apoio dedicados à Coordenação e engenharia técnica de campo.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="leve">
-          <div class="spec-row-header"><span class="spec-row-name">Ford / Ranger</span><span class="spec-row-badge">2 Unid.</span></div>
-          <div class="spec-row-desc">Camionete 4x4 robusta de suporte e apoio técnico rápido.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="leve">
-          <div class="spec-row-header"><span class="spec-row-name">Chevrolet Montana</span><span class="spec-row-badge">12 Unid.</span></div>
-          <div class="spec-row-desc">Pick-up operacional equipada com porta escadas, adaptada.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="leve">
-          <div class="spec-row-header"><span class="spec-row-name">Fiat Strada Flex 1.4</span><span class="spec-row-badge">26 Unid.</span></div>
-          <div class="spec-row-desc">Pick-up operacional equipada com porta escadas, adaptada para frentes aéreas.</div>
-        </div>
-        <div class="fleet-spec-row" data-category="leve">
-          <div class="spec-row-header"><span class="spec-row-name">VW Saveiro</span><span class="spec-row-badge">19 Unid.</span></div>
-          <div class="spec-row-desc">Pick-up operacional equipada com porta escadas, adaptada.</div>
+        <h4>Caminhões & Pranchas</h4>
+        <div class="fleet-col-table-container">
+          <table class="fleet-col-table">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th style="text-align: center; width: 50px;">Qtd</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Ford Cargo 815 E (Munck)</td><td style="text-align: center;"><span class="unit-badge">1</span></td></tr>
+              <tr><td>Volks 8.150 (Adaptado)</td><td style="text-align: center;"><span class="unit-badge">3</span></td></tr>
+              <tr><td>Ford F12000 (Adaptado)</td><td style="text-align: center;"><span class="unit-badge">2</span></td></tr>
+              <tr><td>Mercedes-Benz (Guindauto)</td><td style="text-align: center;"><span class="unit-badge">3</span></td></tr>
+              <tr><td>Ford Cargo (Caçamba)</td><td style="text-align: center;"><span class="unit-badge">2</span></td></tr>
+              <tr><td>Volks 8.150 (Caçamba)</td><td style="text-align: center;"><span class="unit-badge">3</span></td></tr>
+              <tr><td>Daff 300 (Caminhão Prancha)</td><td style="text-align: center;"><span class="unit-badge">2</span></td></tr>
+              <tr><td>Volvo 270 (Caminhão Prancha)</td><td style="text-align: center;"><span class="unit-badge">1</span></td></tr>
+              <tr><td>Ford Cargo 2220 (Prancha)</td><td style="text-align: center;"><span class="unit-badge">1</span></td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<section id="stats" data-theme="dark">
-  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Nossos números</div></div></div>
-  <div class="wrap">
-    <h2 style="color:#fff;max-width:700px;margin-bottom:50px;">Escala nacional, execução de ponta a ponta.</h2>
-    <div class="grid">
-      <div class="cell"><div class="num" data-count="14000"><span class="plus">+</span>0</div><div class="lbl">Km de rede operada em todo o Brasil</div></div>
-      <div class="cell"><div class="num" data-count="96"><span class="plus">+</span>0</div><div class="lbl">Equipes de campo especializadas</div></div>
-      <div class="cell"><div class="num" data-count="71"><span class="plus">+</span>0</div><div class="lbl">Equipes dedicadas de fibra óptica</div></div>
-      <div class="cell"><div class="num" data-count="5000"><span class="plus">+</span>0</div><div class="lbl">Km de rede em operação e manutenção</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="seguranca" data-theme="dark">
-  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Segurança do trabalho</div></div></div>
-  <div class="wrap">
-    <div class="safety-layout">
-      <!-- Left side: Text & Procedures -->
-      <div class="safety-copy rv">
-        <h2 style="color:#fff;margin-bottom:20px;">Rigor absoluto na preservação da vida e conformidade legal</h2>
-        <p style="color:rgba(255,255,255,0.7);font-size:15px;line-height:1.7;margin-bottom:30px;">
-          A JLE Telecom possui forte trabalho realizado na parte da Segurança do Trabalho. Através de Treinamentos constantes, procedimentos desenvolvidos especialmente para nossas atividades e um corpo técnico em contínuo trabalho, mantemos atuante esta área tão importante no dia a dia da Organização.
-        </p>
-
-        <!-- Procedures Grid -->
-        <div class="procedures-grid">
-          <div class="proc-badge"><b>NOR1.003</b><span>Procedimento de Emergência</span></div>
-          <div class="proc-badge"><b>NOR1.002</b><span>Procedimento de Sinalização</span></div>
-          <div class="proc-badge"><b>NOR1.007</b><span>Procedimento EPI</span></div>
-          <div class="proc-badge"><b>NOR1.009</b><span>Procedimento Ferramentas e Equipamentos</span></div>
-          <div class="proc-badge"><b>NOR1.008</b><span>Análise de Risco</span></div>
-          <div class="proc-badge"><b>NOR1.014</b><span>Uso e Conservação de EPI's</span></div>
+      <!-- Column 3: Veículos Leves -->
+      <div class="fleet-col-card rv rv3">
+        <div class="fleet-col-img">
+          <img src="IMAGENS_OTIMIZADAS/VEICULOS/fleet_collage_3.jpg" alt="Veículos Leves JLE">
+        </div>
+        <h4>Veículos Leves & Apoio</h4>
+        <div class="fleet-col-table-container">
+          <table class="fleet-col-table">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th style="text-align: center; width: 50px;">Qtd</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Fiat / Uno VIVACE (Segurança)</td><td style="text-align: center;"><span class="unit-badge">2</span></td></tr>
+              <tr><td>Fiat / Uno Vivace 1.0 (Fiscalização)</td><td style="text-align: center;"><span class="unit-badge">7</span></td></tr>
+              <tr><td>Fiat / Mobi (Coordenação)</td><td style="text-align: center;"><span class="unit-badge">8</span></td></tr>
+              <tr><td>Ford / Ranger (Camionete 4x4)</td><td style="text-align: center;"><span class="unit-badge">2</span></td></tr>
+              <tr><td>Chevrolet Montana (Adaptada)</td><td style="text-align: center;"><span class="unit-badge">12</span></td></tr>
+              <tr><td>Fiat Strada Flex 1.4 (Adaptada)</td><td style="text-align: center;"><span class="unit-badge">26</span></td></tr>
+              <tr><td>VW Saveiro (Adaptada)</td><td style="text-align: center;"><span class="unit-badge">19</span></td></tr>
+            </tbody>
+          </table>
         </div>
 
-        <p style="color:rgba(255,255,255,0.55);font-size:14px;line-height:1.6;margin-top:30px;font-style:italic;">
-          Além destes, há outros Procedimentos de Trabalho, uma Rotina de Exames e Treinamentos contínuos com Empresa Externa Contratada a fim de preservar a legislação atual.
-        </p>
-      </div>
-
-      <!-- Right side: Image Collage -->
-      <div class="safety-visual rv rv2">
-        <div class="safety-collage" style="display: grid; grid-template-columns: 1fr; gap: 16px;">
-          <div class="collage-main" style="aspect-ratio: 4/3;">
-            <img src="IMAGENS_OTIMIZADAS/SEGURANCA/safety_1.jpg" alt="Equipe JLE Telecom">
-          </div>
-          <div class="collage-main" style="aspect-ratio: 4/3;">
-            <img src="IMAGENS_OTIMIZADAS/SEGURANCA/safety_2.jpg" alt="Campanha JLE Segurança">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    <!-- Safety Standards subsection (CCR / Motiva) -->
+<!-- Safety Standards subsection (CCR / Motiva) -->
     <div class="safety-standards-block rv" style="margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px;">
       <h3 style="font-size: 22px; color: #fff; margin-bottom: 8px; font-family: var(--disp); font-weight: 600;">Segurança em operações no padrão CCR e Motiva</h3>
       <p style="color: rgba(255,255,255,0.6); font-size: 14.5px; margin-bottom: 28px;">Cumprimento rigoroso das diretrizes de segurança exigidas pelas maiores concessionárias de rodovias e parceiros do país.</p>
@@ -2029,9 +1928,67 @@
         </div>
       </div>
     </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stats" data-theme="dark">
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Nossos números</div></div></div>
+  <div class="wrap">
+    <h2 style="color:#fff;max-width:700px;margin-bottom:50px;">Escala nacional, execução de ponta a ponta.</h2>
+    <div class="grid">
+      <div class="cell"><div class="num" data-count="14000"><span class="plus">+</span>0</div><div class="lbl">Km de rede operada em todo o Brasil</div></div>
+      <div class="cell"><div class="num" data-count="96"><span class="plus">+</span>0</div><div class="lbl">Equipes de campo especializadas</div></div>
+      <div class="cell"><div class="num" data-count="71"><span class="plus">+</span>0</div><div class="lbl">Equipes dedicadas de fibra óptica</div></div>
+      <div class="cell"><div class="num" data-count="5000"><span class="plus">+</span>0</div><div class="lbl">Km de rede em operação e manutenção</div></div>
+    </div>
+  </div>
 </section>
 
-<section id="cases" data-theme="light">
+<section id="seguranca" data-theme="dark">
+  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Segurança do trabalho</div></div></div>
+  <div class="wrap">
+    <div class="safety-layout">
+      <!-- Left side: Text & Procedures -->
+      <div class="safety-copy rv">
+        <h2 style="color:#fff;margin-bottom:20px;">Rigor absoluto na preservação da vida e conformidade legal</h2>
+        <p style="color:rgba(255,255,255,0.7);font-size:15px;line-height:1.7;margin-bottom:30px;">
+          A JLE Telecom possui forte trabalho realizado na parte da Segurança do Trabalho. Através de Treinamentos constantes, procedimentos desenvolvidos especialmente para nossas atividades e um corpo técnico em contínuo trabalho, mantemos atuante esta área tão importante no dia a dia da Organização.
+        </p>
+
+        <!-- Procedures Grid -->
+        <div class="procedures-grid">
+          <div class="proc-badge"><b>NOR1.003</b><span>Procedimento de Emergência</span></div>
+          <div class="proc-badge"><b>NOR1.002</b><span>Procedimento de Sinalização</span></div>
+          <div class="proc-badge"><b>NOR1.007</b><span>Procedimento EPI</span></div>
+          <div class="proc-badge"><b>NOR1.009</b><span>Procedimento Ferramentas e Equipamentos</span></div>
+          <div class="proc-badge"><b>NOR1.008</b><span>Análise de Risco</span></div>
+          <div class="proc-badge"><b>NOR1.014</b><span>Uso e Conservação de EPI's</span></div>
+        </div>
+
+        <p style="color:rgba(255,255,255,0.55);font-size:14px;line-height:1.6;margin-top:30px;font-style:italic;">
+          Além destes, há outros Procedimentos de Trabalho, uma Rotina de Exames e Treinamentos contínuos com Empresa Externa Contratada a fim de preservar a legislação atual.
+        </p>
+      </div>
+
+      <!-- Right side: Image Collage -->
+      <div class="safety-visual rv rv2">
+        <div class="safety-collage" style="display: grid; grid-template-columns: 1fr; gap: 16px;">
+          <div class="collage-main" style="aspect-ratio: 4/3;">
+            <img src="IMAGENS_OTIMIZADAS/SEGURANCA/safety_1.jpg" alt="Equipe JLE Telecom">
+          </div>
+          <div class="collage-main" style="aspect-ratio: 4/3;">
+            <img src="IMAGENS_OTIMIZADAS/SEGURANCA/safety_2.jpg" alt="Campanha JLE Segurança">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </section>
+
+<section id="cases" data-theme="dark">
   <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Cases em destaque</div></div></div>
   <div class="wrap">
     <div class="sec-head rv">
@@ -2048,9 +2005,9 @@
       </div>
       <div class="live-photos" style="grid-template-columns: 1fr; max-width: 820px; margin: 24px auto 0;">
 <div class="lp-card" style="aspect-ratio: 21/9; overflow: hidden; border-radius: 16px; box-shadow: 0 20px 40px -16px rgba(0,0,0,0.5);"><img src="IMAGENS_OTIMIZADAS/CANALIZAÇÃO/telemont_tapir_rocha.jpg" alt="Máquina de perfuração MND operando na rodovia RS-040 — Capivari do Sul, RS" style="width: 100%; height: 100%; object-fit: cover;"></div>
-</div>
-    </div>
-    </div><div class="case-grid">
+</div>
+    </div>
+    <div class="case-grid">
       <div class="case-card rv">
         <div class="cc-logo-row"><img src="IMAGENS_OTIMIZADAS/LOGOS CLIENTES/Claro.svg.webp" alt="Claro"></div>
         <h4>Operação e manutenção de rede — preventiva e recuperação em todo o Estado de SC e Área 51 do RS.</h4>
@@ -2233,19 +2190,16 @@
       maxZoom: 19
     }).addTo(map);
 
-    const bases = [
-{name:'São Leopoldo', uf:'RS', tag:'Matriz', lat:-29.7594, lng:-51.1478},
-{name:'São José', uf:'SC', tag:'Filial 01', lat:-27.5936, lng:-48.6394},
-{name:'Curitiba', uf:'PR', tag:'Filial 02', lat:-25.4949, lng:-49.2977},
-{name:'São Paulo', uf:'SP', tag:'Base Operacional', lat:-23.5505, lng:-46.6333},
-{name:'Rio de Janeiro', uf:'RJ', tag:'Base Operacional', lat:-22.9068, lng:-43.1729},
-{name:'Brasília', uf:'DF', tag:'Base Operacional', lat:-15.7938, lng:-47.8828},
-{name:'Salvador', uf:'BA', tag:'Base Operacional', lat:-12.9777, lng:-38.5016},
-{name:'Fortaleza', uf:'CE', tag:'Base Operacional', lat:-3.7319, lng:-38.5267},
-{name:'Manaus', uf:'AM', tag:'Base Operacional', lat:-3.1190, lng:-60.0217},
-{name:'Belém', uf:'PA', tag:'Base Operacional', lat:-1.4558, lng:-48.4902},
-{name:'São Luís', uf:'MA', tag:'Base Operacional', lat:-2.53073, lng:-44.3068}
-];
+        const bases = [
+      {name:'São Leopoldo', uf:'RS', tag:'Matriz', lat:-29.7594, lng:-51.1478},
+      {name:'São José', uf:'SC', tag:'Filial 01', lat:-27.5936, lng:-48.6394},
+      {name:'Curitiba', uf:'PR', tag:'Filial 02', lat:-25.4949, lng:-49.2977},
+      {name:'Rio de Janeiro', uf:'RJ', tag:'Base Operacional', lat:-22.9068, lng:-43.1729},
+      {name:'Fortaleza', uf:'CE', tag:'Base Operacional', lat:-3.7319, lng:-38.5267},
+      {name:'Manaus', uf:'AM', tag:'Base Operacional', lat:-3.1190, lng:-60.0217},
+      {name:'Belém', uf:'PA', tag:'Base Operacional', lat:-1.4558, lng:-48.4902},
+      {name:'São Luís', uf:'MA', tag:'Base Operacional', lat:-2.53073, lng:-44.3068}
+    ];
 
     const markers = [];
     bases.forEach(b=>{
@@ -2269,7 +2223,7 @@
       .then(data => {
         L.geoJSON(data, {
           style: function(feature) {
-            const activeStates = ['RS', 'SC', 'PR', 'SP', 'RJ', 'DF', 'BA', 'CE', 'AM', 'PA', 'MA'];
+            const activeStates = ['RS', 'SC', 'PR', 'RJ', 'CE', 'AM', 'PA', 'MA'];
             const uf = feature.properties.sigla;
             if (activeStates.includes(uf)) {
               return {
