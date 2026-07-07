@@ -1963,6 +1963,18 @@
         <img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logo JLE.png" alt="JLE Telecom" style="height: clamp(90px, 12vw, 150px); object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.08));">
         <img src="IMAGENS_OTIMIZADAS/LOGOS JLE/logo_10anos.png" alt="JLE Telecom 10 Anos" style="height: clamp(100px, 13vw, 165px); object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));">
       </div>
+      <!-- Quadro de Números (Nossos Números) -->
+      <div id="stats" class="rv" style="background: var(--navy-deep); padding: 48px 40px !important; border-radius: 24px; margin-top: 60px; box-shadow: 0 24px 48px -20px rgba(8,28,46,0.25); text-align: left; overflow: hidden; position: relative;">
+        <!-- Glowing gradient effect in corner -->
+        <div style="content:''; position:absolute; top:-150px; right:-150px; width:450px; height:450px; background:radial-gradient(circle, rgba(242,153,74,0.14), transparent 70%); pointer-events:none; z-index: 0;"></div>
+        
+        <div class="grid" style="position: relative; z-index: 1;">
+          <div class="cell"><div class="num" data-count="14000"><span class="plus">+</span>0</div><div class="lbl">Km de rede operada em todo o Brasil</div></div>
+          <div class="cell"><div class="num" data-count="96"><span class="plus">+</span>0</div><div class="lbl">Equipes de campo especializadas</div></div>
+          <div class="cell"><div class="num" data-count="71"><span class="plus">+</span>0</div><div class="lbl">Equipes dedicadas de fibra óptica</div></div>
+          <div class="cell"><div class="num" data-count="5000"><span class="plus">+</span>0</div><div class="lbl">Km de rede em operação e manutenção</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2142,18 +2154,7 @@
   </div>
 </section>
 
-<section id="stats" data-theme="dark">
-  <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Nossos números</div></div></div>
-  <div class="wrap">
-    <h2 style="color:#fff;max-width:700px;margin-bottom:50px;">Escala nacional, execução de ponta a ponta.</h2>
-    <div class="grid">
-      <div class="cell"><div class="num" data-count="14000"><span class="plus">+</span>0</div><div class="lbl">Km de rede operada em todo o Brasil</div></div>
-      <div class="cell"><div class="num" data-count="96"><span class="plus">+</span>0</div><div class="lbl">Equipes de campo especializadas</div></div>
-      <div class="cell"><div class="num" data-count="71"><span class="plus">+</span>0</div><div class="lbl">Equipes dedicadas de fibra óptica</div></div>
-      <div class="cell"><div class="num" data-count="5000"><span class="plus">+</span>0</div><div class="lbl">Km de rede em operação e manutenção</div></div>
-    </div>
-  </div>
-</section>
+
 
 <section id="seguranca" data-theme="dark">
   <div class="section-header-band"><div class="wrap"><img src="IMAGENS_OTIMIZADAS/LOGOS JLE/Logotipo_Logo-branco-2048x1521.png" alt="JLE Telecom" class="band-logo"><div class="eyebrow-text">Segurança do trabalho</div></div></div>
@@ -2645,7 +2646,8 @@
       {name:'Fortaleza', uf:'CE', tag:'Base Operacional', lat:-3.7319, lng:-38.5267},
       {name:'Manaus', uf:'AM', tag:'Base Operacional', lat:-3.1190, lng:-60.0217},
       {name:'Belém', uf:'PA', tag:'Base Operacional', lat:-1.4558, lng:-48.4902},
-      {name:'São Luís', uf:'MA', tag:'Base Operacional', lat:-2.53073, lng:-44.3068}
+      {name:'São Luís', uf:'MA', tag:'Base Operacional', lat:-2.53073, lng:-44.3068},
+      {name:'Lucas do Rio Verde', uf:'MT', tag:'Base Operacional', lat:-13.0719, lng:-55.9192}
     ];
 
     const markers = [];
@@ -2670,7 +2672,7 @@
       .then(data => {
         L.geoJSON(data, {
           style: function(feature) {
-            const activeStates = ['RS', 'SC', 'PR', 'RJ', 'CE', 'AM', 'PA', 'MA'];
+            const activeStates = ['RS', 'SC', 'PR', 'RJ', 'CE', 'AM', 'PA', 'MA', 'MT', 'ES'];
             const uf = feature.properties.sigla;
             if (activeStates.includes(uf)) {
               return {
