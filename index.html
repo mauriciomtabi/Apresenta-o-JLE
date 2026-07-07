@@ -746,7 +746,9 @@
     color: var(--orange-deep);
   }
   #cases .live-photos {
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
     margin: 0 !important;
     max-width: 100% !important;
     position: relative;
@@ -757,7 +759,7 @@
     overflow: hidden;
     box-shadow: 0 20px 40px -16px rgba(8,28,46,0.15);
     position: relative;
-    aspect-ratio: 16/10;
+    aspect-ratio: 4/3;
   }
   #cases .live-photos .lp-card img {
     width: 100%;
@@ -769,6 +771,10 @@
     #cases .live-block {
       grid-template-columns: 1fr;
       gap: 28px;
+    }
+    #cases .live-photos {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
     }
     #cases .live-photos .lp-card {
       aspect-ratio: 16/9;
