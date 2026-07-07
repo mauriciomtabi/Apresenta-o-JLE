@@ -2656,30 +2656,36 @@
 
     const markers = [];
     bases.forEach(b=>{
-      let pinHtml = '<div class="pin-dot-leaflet"></div>';
-      let iconSize = [14,14];
-      let iconAnchor = [7,7]; // Center anchor for standard dots
-      
+      let pinHtml, iconSize, iconAnchor;
+
       if (b.tag === 'Matriz') {
-        pinHtml = `<div class="pin-fixed-base matriz" style="width:24px; height:24px; border-radius:50%; background:var(--orange); border:2px solid #fff; display:flex; align-items:center; justify-content:center; box-shadow:0 0 10px var(--orange); animation: livePulse 2s infinite;">
-          <svg viewBox="0 0 24 24" width="12" height="12" fill="#fff" stroke="var(--navy-deep)" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-        </div>`;
-        iconSize = [24,24];
-        iconAnchor = [12,12];
-      } else if (b.tag.includes('Filial')) {
-        pinHtml = `<div class="pin-fixed-base filial" style="width:20px; height:20px; border-radius:50%; background:var(--orange-deep); border:2px solid #fff; display:flex; align-items:center; justify-content:center; box-shadow:0 0 8px var(--orange-deep);">
-          <svg viewBox="0 0 24 24" width="10" height="10" fill="#fff" stroke="var(--navy-deep)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-        </div>`;
-        iconSize = [20,20];
-        iconAnchor = [10,10];
+        pinHtml = '<div style="width:26px; height:26px; border-radius:50%; background:#F2994A; border:3px solid #fff; display:flex; align-items:center; justify-content:center; box-shadow:0 0 12px rgba(242,153,74,0.7);">'
+          + '<svg viewBox="0 0 24 24" width="13" height="13" fill="#fff" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>'
+          + '</div>';
+        iconSize = [26, 26];
+        iconAnchor = [13, 13];
+      } else if (b.tag && b.tag.includes('Filial')) {
+        pinHtml = '<div style="width:22px; height:22px; border-radius:50%; background:#c96e1e; border:3px solid #fff; display:flex; align-items:center; justify-content:center; box-shadow:0 0 10px rgba(201,110,30,0.7);">'
+          + '<svg viewBox="0 0 24 24" width="11" height="11" fill="#fff" stroke="none"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>'
+          + '</div>';
+        iconSize = [22, 22];
+        iconAnchor = [11, 11];
+      } else {
+        pinHtml = '<div class="pin-dot-leaflet"></div>';
+        iconSize = [14, 14];
+        iconAnchor = [7, 7];
       }
-      
+
       const icon = L.divIcon({
-        className:'',
+        className: '',
         html: pinHtml,
         iconSize: iconSize,
         iconAnchor: iconAnchor
       });
+      const m = L.marker([b.lat, b.lng], {icon}).addTo(map)
+        .bindPopup('<b>' + b.name + ' — ' + b.uf + '</b><br>' + b.tag);
+      markers.push(m);
+    });
       const m = L.marker([b.lat,b.lng], {icon}).addTo(map)
         .bindPopup(`<b>${b.name} — ${b.uf}</b><br>${b.tag}`);
       markers.push(m);
