@@ -2686,15 +2686,9 @@
         .bindPopup('<b>' + b.name + ' — ' + b.uf + '</b><br>' + b.tag);
       markers.push(m);
     });
-      const m = L.marker([b.lat,b.lng], {icon}).addTo(map)
-        .bindPopup(`<b>${b.name} — ${b.uf}</b><br>${b.tag}`);
-      markers.push(m);
-    });
-      const m = L.marker([b.lat,b.lng], {icon}).addTo(map)
-        .bindPopup(`<b>${b.name} · ${b.uf}</b><br>${b.tag}`);
-      markers.push(m);
-    });
-
+
+
+
     const group = new L.featureGroup(markers);
     map.fitBounds(group.getBounds().pad(0.12));
 
