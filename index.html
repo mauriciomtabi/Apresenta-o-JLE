@@ -2850,8 +2850,7 @@
 
 /* ===== PRINT AND PDF EXPORT STYLING (Ctrl + P) ===== */
 @page {
-  size: A4 landscape;
-  margin: 0;
+  margin: 0 !important;
 }
 @media print {
   * {
@@ -2889,7 +2888,7 @@
     display: block !important;
   }
 
-  /* Force each section to act as a 100% height horizontal slide matching physical A4 landscape dimensions */
+  /* Force each section to act as a 100% height horizontal slide */
   section {
     page-break-inside: avoid !important;
     page-break-before: always !important;
@@ -2899,11 +2898,10 @@
     position: relative !important;
     display: block !important;
     float: none !important;
-    width: 297mm !important;
-    max-width: 297mm !important;
-    height: 210mm !important;
-    min-height: 210mm !important;
-    max-height: 210mm !important;
+    width: 100% !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
     overflow: hidden !important;
     margin: 0 !important;
     box-sizing: border-box !important;
