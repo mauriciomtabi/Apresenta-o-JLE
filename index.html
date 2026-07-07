@@ -693,7 +693,7 @@
   }
   #cases .live-block {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 0.72fr 1.6fr;
     gap: 48px;
     align-items: center;
     margin-bottom: 70px;
@@ -1946,7 +1946,7 @@
     position: absolute;
     left: 4%;
     top: 20px;
-    width: 65%;
+    width: 74%;
     aspect-ratio: 16/10;
     z-index: 2;
     border-radius: 20px;
@@ -1974,9 +1974,9 @@
   
   .live-premium-card-overlay {
     position: absolute;
-    right: 4%;
-    bottom: 20px;
-    width: 48%;
+    right: 3%;
+    bottom: 15px;
+    width: 40%;
     aspect-ratio: 4/3;
     z-index: 3;
     background: rgba(8, 28, 46, 0.85);
@@ -2581,18 +2581,18 @@
         </div>
       </div>
       <div class="live-photos-premium">
-        <!-- Card 1: Main Photo -->
-        <div class="live-premium-card-main">
-          <span class="live-premium-tech-badge">Foto de Campo</span>
-          <img src="IMAGENS_OTIMIZADAS/CANALIZAÇÃO/telemont_tapir_rocha.jpg" alt="Máquina de perfuração MND operando na rodovia RS-040 — Capivari do Sul, RS">
-          <span class="live-premium-tech-coords">LAT -30.154 | LNG -50.601</span>
+        <!-- Card 1: Main Card (Now the Map) -->
+        <div class="live-premium-card-main" style="background: #0b1a26;">
+          <span class="live-premium-tech-badge" style="background: var(--navy-deep); border: 1px solid rgba(242,153,74,0.5);">Traçado da Rota</span>
+          <img src="IMAGENS_OTIMIZADAS/mapa_malbec.png" alt="Mapa do trecho de 91km do cabo submarino Malbec entre Viamão e Pinhal" style="object-fit: contain;">
+          <span class="live-premium-tech-coords" style="background: rgba(242,153,74,0.25); color: #fff; border: 1px solid rgba(242,153,74,0.4);">MND: 91km</span>
         </div>
-        <!-- Card 2: Map Overlap -->
+        <!-- Card 2: Overlay Card (Now the Field Photo) -->
         <div class="live-premium-card-overlay">
           <div class="live-premium-card-overlay-inner">
-            <span class="live-premium-tech-badge" style="background: var(--navy-deep); border: 1px solid rgba(242,153,74,0.5);">Traçado da Rota</span>
-            <img src="IMAGENS_OTIMIZADAS/mapa_malbec.png" alt="Mapa do trecho de 91km do cabo submarino Malbec entre Viamão e Pinhal">
-            <span class="live-premium-tech-coords" style="background: rgba(242,153,74,0.25); color: #fff; border: 1px solid rgba(242,153,74,0.4);">MND: 91km</span>
+            <span class="live-premium-tech-badge">Foto de Campo</span>
+            <img src="IMAGENS_OTIMIZADAS/CANALIZAÇÃO/telemont_tapir_rocha.jpg" alt="Máquina de perfuração MND operando na rodovia RS-040 — Capivari do Sul, RS" style="object-fit: cover;">
+            <span class="live-premium-tech-coords">LAT -30.154 | LNG -50.601</span>
           </div>
         </div>
       </div>
