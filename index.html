@@ -2891,8 +2891,6 @@
   /* Force each section to act as a 100% height horizontal slide */
   section {
     page-break-inside: avoid !important;
-    page-break-before: always !important;
-    break-before: page !important;
     page-break-after: always !important;
     break-after: page !important;
     position: relative !important;
@@ -2907,48 +2905,57 @@
     box-sizing: border-box !important;
   }
 
+  /* Force all scroll-revealed elements to be visible during print */
+  .rv {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    transition: none !important;
+  }
+
+  /* Custom scaling (zoom) per section to guarantee 100% fit on a single A4 page */
   /* Custom scaling (zoom) per section to guarantee 100% fit on a single A4 page */
   #hero {
     display: flex !important;
     align-items: flex-end !important;
     padding: 0 0 100px 0 !important;
-    zoom: 0.9 !important;
+    zoom: 0.92 !important;
   }
   #sobre {
-    padding: 50px 0 !important;
-    zoom: 0.70 !important;
+    padding: 40px 0 !important;
+    zoom: 0.58 !important;
   }
   #diferenciais {
-    padding: 60px 0 !important;
-    zoom: 0.78 !important;
-  }
-  #estrutura {
-    padding: 60px 0 !important;
-    zoom: 0.82 !important;
-  }
-  #frota {
-    padding: 50px 0 !important;
-    zoom: 0.70 !important;
-  }
-  #seguranca {
-    padding: 50px 0 !important;
-    zoom: 0.70 !important;
-  }
-  #cases {
-    padding: 50px 0 !important;
-    zoom: 0.70 !important;
-  }
-  #clientes {
-    padding: 60px 0 !important;
-    zoom: 0.85 !important;
-  }
-  #plataforma {
     padding: 50px 0 !important;
     zoom: 0.72 !important;
   }
+  #estrutura {
+    padding: 50px 0 !important;
+    zoom: 0.75 !important;
+  }
+  #frota {
+    padding: 40px 0 !important;
+    zoom: 0.65 !important;
+  }
+  #seguranca {
+    padding: 40px 0 !important;
+    zoom: 0.65 !important;
+  }
+  #cases {
+    padding: 40px 0 !important;
+    zoom: 0.68 !important;
+  }
+  #clientes {
+    padding: 50px 0 !important;
+    zoom: 0.78 !important;
+  }
+  #plataforma {
+    padding: 40px 0 !important;
+    zoom: 0.68 !important;
+  }
   #contato {
-    padding: 60px 0 !important;
-    zoom: 0.82 !important;
+    padding: 50px 0 !important;
+    zoom: 0.78 !important;
   }
 
   .wrap {
