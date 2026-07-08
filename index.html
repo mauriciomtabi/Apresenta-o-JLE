@@ -2939,11 +2939,64 @@
   }
   #seguranca {
     padding: 40px 0 !important;
-    zoom: 0.65 !important;
+    zoom: 0.52 !important;
   }
   #cases {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+  #cases #malbec,
+  #cases .live-block,
+  #cases .past-routes-wrapper,
+  #cases .case-grid {
+    page-break-inside: avoid !important;
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+  #cases #malbec {
+    padding: 40px 0 !important;
+    zoom: 0.70 !important;
+  }
+  #cases .live-block {
+    page-break-before: always !important;
+    break-before: page !important;
     padding: 40px 0 !important;
     zoom: 0.68 !important;
+  }
+  #cases .past-routes-wrapper {
+    page-break-before: always !important;
+    break-before: page !important;
+    padding: 50px 0 !important;
+    zoom: 0.65 !important;
+    background: var(--paper) !important;
+  }
+  #cases .past-routes-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+  #cases .case-grid {
+    page-break-before: always !important;
+    break-before: page !important;
+    padding: 60px 0 !important;
+    zoom: 0.62 !important;
+    background: var(--paper) !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(2, auto) !important;
+    gap: 24px !important;
+  }
+  #cases .case-card {
+    height: auto !important;
   }
   #clientes {
     padding: 50px 0 !important;
@@ -3518,6 +3571,8 @@
       </div>
     </div>
 
+    <!-- Wrapper to treat Completed Routes as a single print page -->
+    <div class="past-routes-wrapper">
     <!-- Subtitle for Completed Routes -->
     <div class="sec-head rv" style="max-width: 100%; margin-top: 60px; margin-bottom: 32px; border-top: 1px solid var(--line); padding-top: 48px;">
       <h3 style="font-size: 24px; color: var(--navy-deep); font-family: var(--disp); font-weight: 700;">Trechos Semelhantes Concluídos no RS</h3>
@@ -3585,6 +3640,7 @@
         </div>
       </div>
 
+    </div>
     </div>
     
     <div class="case-grid">
